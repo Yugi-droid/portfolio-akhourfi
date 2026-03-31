@@ -1,64 +1,1642 @@
-<!-- Example of potential updated content -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: Arial, sans-serif;
-            /* Improved contrast for text */
-        }
-        a {
-            color: #1e90ff;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio de Yassine AKHOURFI, étudiant en BTS SIO SISR. Découvrez mes projets, stages et compétences en administration système et réseaux."/>
+  <title>Yassine AKHOURFI – Portfolio BTS SIO SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0f1e;
+      --surface: #111827;
+      --surface2: #1a2236;
+      --accent: #00d4ff;
+      --accent2: #818cf8;
+      --accent3: #34d399;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(0,212,255,0.2);
+      --radius: 12px;
+      --mono: 'Space Mono', 'Courier New', monospace;
+      --sans: 'Sora', system-ui, sans-serif;
+    }
+
+    /* Respect des préférences de mouvement */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: var(--sans); 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.6; 
+      overflow-x: hidden; 
+    }
+
+    /* SKIP LINK - Lien pour sauter le contenu */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+      border-radius: 0 0 4px 0;
+      font-weight: 700;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* NAV */
+    nav { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      z-index: 100; 
+      background: rgba(10,15,30,0.95); 
+      backdrop-filter: blur(14px); 
+      border-bottom: 2px solid var(--border); 
+      padding: 0 2rem; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      height: 64px; 
+    }
+    .nav-brand { 
+      font-family: var(--mono); 
+      font-size: .85rem; 
+      color: var(--accent); 
+      letter-spacing: .08em; 
+      font-weight: 700;
+    }
+    .nav-links { 
+      display: flex; 
+      gap: 1.5rem; 
+      list-style: none; 
+    }
+    .nav-links a { 
+      font-size: .78rem; 
+      font-family: var(--mono); 
+      color: var(--muted); 
+      text-decoration: none; 
+      letter-spacing: .06em; 
+      text-transform: uppercase; 
+      transition: color .2s; 
+      padding: 8px 4px;
+      border-radius: 4px;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus { 
+      color: var(--accent);
+      outline: none;
+    }
+    .nav-links a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .nav-links a[aria-current="page"] {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    .hamburger { 
+      display: none; 
+      flex-direction: column; 
+      gap: 5px; 
+      cursor: pointer; 
+      background: none; 
+      border: 2px solid var(--accent); 
+      padding: 6px; 
+      border-radius: 4px;
+      transition: all .3s;
+    }
+    .hamburger:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .hamburger span { 
+      display: block; 
+      width: 24px; 
+      height: 2px; 
+      background: var(--accent); 
+      border-radius: 2px; 
+      transition: .3s; 
+    }
+
+    /* HERO */
+    #accueil { 
+      min-height: 100vh; 
+      padding: 100px 2rem 4rem; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      position: relative; 
+      overflow: hidden; 
+    }
+    .hero-bg { 
+      position: absolute; 
+      inset: 0; 
+      z-index: 0; 
+      background: radial-gradient(ellipse 70% 60% at 20% 40%, rgba(0,212,255,.08) 0%, transparent 60%), 
+                  radial-gradient(ellipse 60% 50% at 80% 70%, rgba(129,140,248,.07) 0%, transparent 60%); 
+    }
+    .hero-grid { 
+      position: absolute; 
+      inset: 0; 
+      background-image: linear-gradient(rgba(0,212,255,.04) 1px, transparent 1px), 
+                        linear-gradient(90deg, rgba(0,212,255,.04) 1px, transparent 1px); 
+      background-size: 60px 60px; 
+    }
+    .hero-inner { 
+      position: relative; 
+      z-index: 1; 
+      max-width: 900px; 
+      width: 100%; 
+      display: grid; 
+      grid-template-columns: 1fr auto; 
+      gap: 3rem; 
+      align-items: center; 
+    }
+    .hero-label { 
+      font-family: var(--mono); 
+      font-size: .75rem; 
+      color: var(--accent); 
+      letter-spacing: .15em; 
+      text-transform: uppercase; 
+      margin-bottom: 1rem; 
+      display: flex; 
+      align-items: center; 
+      gap: .5rem; 
+    }
+    .hero-label::before { 
+      content: ''; 
+      display: block; 
+      width: 2rem; 
+      height: 2px; 
+      background: var(--accent); 
+      aria-hidden: "true";
+    }
+    .hero-name { 
+      font-size: clamp(2.5rem, 7vw, 5rem); 
+      font-weight: 800; 
+      line-height: 1.05; 
+      letter-spacing: -.03em; 
+      background: linear-gradient(135deg, #e2e8f0 30%, var(--accent) 100%); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      background-clip: text; 
+      margin-bottom: .5rem; 
+    }
+    .hero-sub { 
+      font-size: 1.1rem; 
+      font-weight: 300; 
+      color: var(--accent2); 
+      margin-bottom: 1.25rem; 
+    }
+    .hero-desc { 
+      color: var(--muted); 
+      max-width: 480px; 
+      font-size: .95rem; 
+      margin-bottom: 2rem; 
+    }
+    .hero-btns { 
+      display: flex; 
+      gap: 1rem; 
+      flex-wrap: wrap; 
+    }
+    .btn { 
+      display: inline-block; 
+      padding: .7rem 1.6rem; 
+      font-family: var(--mono); 
+      font-size: .78rem; 
+      letter-spacing: .08em; 
+      text-transform: uppercase; 
+      text-decoration: none; 
+      border-radius: 6px; 
+      transition: all .2s; 
+      cursor: pointer; 
+      border: none; 
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .btn-primary { 
+      background: var(--accent); 
+      color: #0a0f1e; 
+      font-weight: 700; 
+    }
+    .btn-primary:hover,
+    .btn-primary:focus { 
+      background: #00b8dd; 
+      transform: translateY(-2px); 
+      box-shadow: 0 8px 24px rgba(0,212,255,.3); 
+    }
+    .btn-outline { 
+      background: transparent; 
+      border: 2px solid var(--border); 
+      color: var(--text); 
+    }
+    .btn-outline:hover,
+    .btn-outline:focus { 
+      border-color: var(--accent); 
+      color: var(--accent); 
+      transform: translateY(-2px); 
+    }
+    .hero-badge { 
+      background: var(--surface2); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      text-align: center; 
+      min-width: 180px; 
+    }
+    .hero-badge-icon { 
+      font-size: 2.5rem; 
+      margin-bottom: .5rem; 
+      aria-hidden: "true";
+    }
+    .hero-badge-label { 
+      font-family: var(--mono); 
+      font-size: .7rem; 
+      color: var(--muted); 
+      letter-spacing: .1em; 
+    }
+    .hero-badge-val { 
+      font-size: 1rem; 
+      font-weight: 700; 
+      color: var(--accent); 
+      margin-top: .25rem; 
+    }
+
+    /* SECTIONS */
+    section { 
+      padding: 5rem 2rem; 
+    }
+    .container { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+    }
+    .section-label { 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      color: var(--accent); 
+      letter-spacing: .18em; 
+      text-transform: uppercase; 
+      margin-bottom: .75rem; 
+      display: flex; 
+      align-items: center; 
+      gap: .5rem; 
+    }
+    .section-label::before { 
+      content:''; 
+      display:block; 
+      width:1.5rem; 
+      height:2px; 
+      background:var(--accent); 
+      aria-hidden: "true";
+    }
+    .section-title { 
+      font-size: clamp(1.8rem, 4vw, 2.6rem); 
+      font-weight: 800; 
+      letter-spacing: -.02em; 
+      margin-bottom: 1rem; 
+    }
+    .section-desc { 
+      color: var(--muted); 
+      max-width: 560px; 
+      margin-bottom: 3rem; 
+    }
+
+    /* A PROPOS */
+    #apropos { 
+      background: var(--surface); 
+    }
+    .about-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 2.5rem; 
+      align-items: start; 
+    }
+    .about-photo-placeholder { 
+      width: 100%; 
+      aspect-ratio: 3/4; 
+      border-radius: var(--radius); 
+      border: 2px solid var(--border); 
+      background: var(--surface2); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 5rem; 
+      aria-label: "Photo de profil - Yassine AKHOURFI";
+    }
+    .about-cards { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 1rem; 
+    }
+    .about-card { 
+      background: var(--surface2); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.25rem 1.5rem; 
+      transition: border-color .2s;
+    }
+    .about-card:focus-within {
+      border-color: var(--accent);
+    }
+    .about-card h3 { 
+      font-family: var(--mono); 
+      font-size: .78rem; 
+      color: var(--accent); 
+      letter-spacing: .1em; 
+      text-transform: uppercase; 
+      margin-bottom: .6rem; 
+    }
+    .about-card p { 
+      color: var(--muted); 
+      font-size: .9rem; 
+    }
+    .about-card p + p { 
+      margin-top: .5rem; 
+    }
+
+    /* STAGES */
+    .stages-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 1.5rem; 
+    }
+    .stage-card { 
+      background: var(--surface); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.75rem; 
+      position: relative; 
+      overflow: hidden; 
+      transition: border-color .2s, transform .2s; 
+    }
+    .stage-card:hover,
+    .stage-card:focus-within { 
+      border-color: var(--accent); 
+      transform: translateY(-4px); 
+    }
+    .stage-card::before { 
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      height: 3px; 
+      background: linear-gradient(90deg, var(--accent), var(--accent2)); 
+      aria-hidden: "true";
+    }
+    .stage-year { 
+      font-family: var(--mono); 
+      font-size: .7rem; 
+      color: var(--accent); 
+      letter-spacing: .1em; 
+      margin-bottom: .75rem; 
+      text-transform: uppercase; 
+    }
+    .stage-title { 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      margin-bottom: .25rem; 
+    }
+    .stage-company { 
+      color: var(--accent2); 
+      font-size: .85rem; 
+      margin-bottom: 1rem; 
+    }
+    .stage-missions h4 { 
+      font-family: var(--mono); 
+      font-size: .7rem; 
+      color: var(--muted); 
+      letter-spacing: .08em; 
+      text-transform: uppercase; 
+      margin-bottom: .5rem; 
+    }
+    .stage-missions ul { 
+      list-style: none; 
+      display: flex; 
+      flex-direction: column; 
+      gap: .3rem; 
+    }
+    .stage-missions li { 
+      font-size: .85rem; 
+      color: var(--text); 
+      display: flex; 
+      align-items: flex-start; 
+      gap: .5rem; 
+    }
+    .stage-missions li::before { 
+      content: '→'; 
+      color: var(--accent); 
+      flex-shrink: 0; 
+      aria-hidden: "true";
+    }
+    .stage-skills { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: .4rem; 
+      margin-top: 1rem; 
+    }
+    .tag { 
+      font-family: var(--mono); 
+      font-size: .68rem; 
+      padding: .2rem .6rem; 
+      border-radius: 4px; 
+      background: rgba(0,212,255,.08); 
+      border: 1px solid rgba(0,212,255,.2); 
+      color: var(--accent); 
+    }
+
+    /* PROJETS */
+    #projets { 
+      background: var(--surface); 
+    }
+    .projets-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      gap: 1.5rem; 
+    }
+    .projet-card { 
+      background: var(--bg); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      overflow: hidden; 
+      transition: border-color .2s, transform .2s; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    .projet-card:hover,
+    .projet-card:focus-within { 
+      border-color: var(--accent); 
+      transform: translateY(-4px); 
+    }
+    .projet-img-placeholder { 
+      width: 100%; 
+      height: 160px; 
+      background: linear-gradient(135deg, var(--surface2), var(--surface)); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 2.5rem; 
+      aria-hidden: "true";
+    }
+    .projet-body { 
+      padding: 1.25rem; 
+      flex: 1; 
+      display: flex; 
+      flex-direction: column; 
+    }
+    .projet-context { 
+      font-family: var(--mono); 
+      font-size: .68rem; 
+      color: var(--accent3); 
+      letter-spacing: .08em; 
+      text-transform: uppercase; 
+      margin-bottom: .5rem; 
+    }
+    .projet-title { 
+      font-size: 1rem; 
+      font-weight: 700; 
+      margin-bottom: .6rem; 
+    }
+    .projet-desc { 
+      font-size: .85rem; 
+      color: var(--muted); 
+      margin-bottom: 1rem; 
+      flex: 1; 
+    }
+    .projet-results { 
+      list-style: none; 
+      display: flex; 
+      flex-direction: column; 
+      gap: .3rem; 
+    }
+    .projet-results li { 
+      font-size: .8rem; 
+      color: var(--text); 
+      display: flex; 
+      align-items: flex-start; 
+      gap: .5rem; 
+    }
+    .projet-results li::before { 
+      content: '✓'; 
+      color: var(--accent3); 
+      flex-shrink: 0; 
+      aria-hidden: "true";
+    }
+
+    /* COMPETENCES */
+    .skills-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      gap: 1.5rem; 
+      margin-bottom: 3rem; 
+    }
+    .skill-category { 
+      background: var(--surface); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      transition: border-color .2s;
+    }
+    .skill-category:focus-within {
+      border-color: var(--accent);
+    }
+    .skill-category h3 { 
+      font-weight: 700; 
+      margin-bottom: 1.25rem; 
+      font-size: .95rem; 
+      color: var(--text); 
+    }
+    .skill-item { 
+      margin-bottom: 1rem; 
+    }
+    .skill-header { 
+      display: flex; 
+      justify-content: space-between; 
+      font-size: .82rem; 
+      margin-bottom: .35rem; 
+    }
+    .skill-name { 
+      color: var(--text); 
+    }
+    .skill-pct { 
+      font-family: var(--mono); 
+      color: var(--accent); 
+      font-size: .75rem; 
+    }
+    .skill-bar { 
+      height: 4px; 
+      background: var(--surface2); 
+      border-radius: 2px; 
+      overflow: hidden; 
+      border: 1px solid rgba(0,212,255,.1);
+    }
+    .skill-fill { 
+      height: 100%; 
+      background: linear-gradient(90deg, var(--accent), var(--accent2)); 
+      border-radius: 2px; 
+      width: 0; 
+      transition: width 1s ease; 
+    }
+    .tools-box { 
+      background: var(--surface); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      margin-bottom: 2rem; 
+    }
+    .tools-box h3 { 
+      font-weight: 700; 
+      margin-bottom: 1rem; 
+    }
+    .tools-list { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: .5rem; 
+    }
+    .tool-tag { 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      padding: .3rem .75rem; 
+      border-radius: 4px; 
+      background: var(--surface2); 
+      border: 1px solid var(--border); 
+      color: var(--muted); 
+      transition: all .15s; 
+    }
+    .tool-tag:hover,
+    .tool-tag:focus {
+      color: var(--accent); 
+      border-color: var(--accent);
+    }
+
+    /* VEILLE */
+    #veille { 
+      background: var(--surface); 
+    }
+    .veille-card { 
+      background: var(--bg); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      overflow: hidden; 
+      margin-bottom: 2rem; 
+      transition: border-color .2s;
+    }
+    .veille-card:focus-within {
+      border-color: var(--accent);
+    }
+    .veille-header { 
+      display: flex; 
+      align-items: center; 
+      gap: 1.5rem; 
+      padding: 2rem; 
+      border-bottom: 2px solid var(--border); 
+    }
+    .veille-img-placeholder { 
+      width: 140px; 
+      height: 100px; 
+      background: linear-gradient(135deg, var(--surface2), var(--bg)); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 2.5rem; 
+      border-radius: 8px; 
+      flex-shrink: 0; 
+      aria-hidden: "true";
+    }
+    .veille-cat { 
+      font-family: var(--mono); 
+      font-size: .7rem; 
+      color: var(--accent3); 
+      letter-spacing: .1em; 
+      text-transform: uppercase; 
+      margin-bottom: .4rem; 
+    }
+    .veille-title { 
+      font-size: 1.3rem; 
+      font-weight: 700; 
+      margin-bottom: .3rem; 
+    }
+    .veille-subtitle { 
+      color: var(--muted); 
+      font-size: .9rem; 
+    }
+    .veille-body { 
+      padding: 2rem; 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 2rem; 
+    }
+    .veille-section h4 { 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      color: var(--accent); 
+      letter-spacing: .1em; 
+      text-transform: uppercase; 
+      margin-bottom: .75rem; 
+    }
+    .veille-points { 
+      list-style: none; 
+      display: flex; 
+      flex-direction: column; 
+      gap: .6rem; 
+    }
+    .veille-points li { 
+      font-size: .88rem; 
+      color: var(--muted); 
+    }
+    .veille-points li strong { 
+      color: var(--text); 
+      display: block; 
+      margin-bottom: .1rem; 
+    }
+    .veille-impact { 
+      padding: 1.5rem 2rem; 
+      background: var(--surface2); 
+      border-top: 2px solid var(--border); 
+    }
+    .veille-impact h4 { 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      color: var(--accent2); 
+      letter-spacing: .1em; 
+      text-transform: uppercase; 
+      margin-bottom: .5rem; 
+    }
+    .veille-impact p { 
+      font-size: .88rem; 
+      color: var(--muted); 
+    }
+    .veille-techs { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: .5rem; 
+      margin-top: 1rem; 
+    }
+    .article-link { 
+      display: inline-block; 
+      margin-top: 1rem; 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      color: var(--accent); 
+      text-decoration: underline;
+      border: 1px solid rgba(0,212,255,.3); 
+      padding: .3rem .75rem; 
+      border-radius: 4px; 
+      transition: all .2s; 
+    }
+    .article-link:hover,
+    .article-link:focus { 
+      border-color: var(--accent); 
+      background: rgba(0,212,255,.08);
+      outline: none;
+    }
+    .article-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* CONTACT */
+    .contact-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1.3fr; 
+      gap: 2.5rem; 
+    }
+    .contact-info { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 1rem; 
+    }
+    .contact-item { 
+      background: var(--surface); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.25rem 1.5rem; 
+      display: flex; 
+      align-items: flex-start; 
+      gap: 1rem; 
+      transition: border-color .2s;
+    }
+    .contact-item:focus-within {
+      border-color: var(--accent);
+    }
+    .contact-icon { 
+      font-size: 1.4rem; 
+      flex-shrink: 0; 
+      aria-hidden: "true";
+    }
+    .contact-label { 
+      font-family: var(--mono); 
+      font-size: .68rem; 
+      color: var(--muted); 
+      letter-spacing: .1em; 
+      text-transform: uppercase; 
+      margin-bottom: .25rem; 
+    }
+    .contact-value { 
+      color: var(--text); 
+      font-size: .9rem; 
+    }
+    .contact-value a { 
+      color: var(--accent); 
+      text-decoration: underline;
+    }
+    .contact-value a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .contact-form { 
+      background: var(--surface); 
+      border: 2px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 2rem; 
+    }
+    .form-group { 
+      margin-bottom: 1.25rem; 
+    }
+    .form-group label { 
+      display: block; 
+      font-family: var(--mono); 
+      font-size: .72rem; 
+      color: var(--muted); 
+      letter-spacing: .08em; 
+      text-transform: uppercase; 
+      margin-bottom: .4rem; 
+      font-weight: 600;
+    }
+    .form-group input, 
+    .form-group textarea { 
+      width: 100%; 
+      background: var(--bg); 
+      border: 2px solid var(--border); 
+      border-radius: 6px; 
+      color: var(--text); 
+      font-family: var(--sans); 
+      font-size: .9rem; 
+      padding: .7rem 1rem; 
+      transition: border-color .2s; 
+      outline: none; 
+    }
+    .form-group input:focus, 
+    .form-group textarea:focus { 
+      border-color: var(--accent);
+    }
+    .form-group input:focus-visible,
+    .form-group textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .form-group textarea { 
+      resize: vertical; 
+      min-height: 100px; 
+    }
+    .form-row { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 1rem; 
+    }
+
+    footer { 
+      border-top: 2px solid var(--border); 
+      text-align: center; 
+      padding: 2rem; 
+      font-family: var(--mono); 
+      font-size: .75rem; 
+      color: var(--muted); 
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open { 
+        display: flex; 
+        flex-direction: column; 
+        position: fixed; 
+        top: 64px; 
+        left: 0; 
+        right: 0; 
+        background: var(--bg); 
+        border-bottom: 2px solid var(--border); 
+        padding: 1.5rem 2rem; 
+        gap: 1.25rem; 
+        z-index: 99; 
+      }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-badge { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .stages-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .veille-body { grid-template-columns: 1fr; }
+      .veille-header { flex-direction: column; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(20px); 
+      transition: opacity .6s, transform .6s; 
+    }
+    .fade-in.visible { 
+      opacity: 1; 
+      transform: none; 
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1 aria-label="Welcome to My Portfolio">My Portfolio</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#about" tabindex="0">About</a></li>
-            <li><a href="#projects" tabindex="0">Projects</a></li>
-            <li><a href="#contact" tabindex="0">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio. I am a developer.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <article>
-                <h3>Project 1</h3>
-                <img src="project1.jpg" alt="Screenshot of Project 1" />
-                <p>Description of Project 1.</p>
-            </article>
-            <article>
-                <h3>Project 2</h3>
-                <img src="project2.jpg" alt="Screenshot of Project 2" />
-                <p>Description of Project 2.</p>
-            </article>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input id="name" type="text" aria-required="true" />
-                <label for="email">Email:</label>
-                <input id="email" type="email" aria-required="true" />
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 My Portfolio</p>
-    </footer>
+
+<!-- SKIP LINK -->
+<a href="#main-content" class="skip-link">Sauter au contenu principal</a>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Navigation principale">
+  <div class="nav-brand">BTS SISR</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#accueil" aria-current="page">Accueil</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#stages">Stages</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#veille">Veille</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<main id="main-content">
+<section id="accueil" aria-labelledby="hero-title">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-label">Bonjour, je suis</div>
+      <h1 class="hero-name" id="hero-title">Yassine AKHOURFI</h1>
+      <p class="hero-sub">Étudiant en BTS SIO – SISR</p>
+      <p class="hero-desc">Passionné par les infrastructures réseaux et la cybersécurité, je développe mes compétences en administration système et sécurité informatique.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Me contacter</a>
+        <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+      </div>
+      <div class="hero-secondary-action" style="margin-top: 1.25rem;">
+        <a href="SIO2-B1 - 2.3 - Tableau de synthèse - Épreuve E5 - BTS SIO 2025.xlsx" class="btn btn-outline" download>Télécharger le tableau de synthèse</a>
+      </div>
+    </div>
+    <div class="hero-badge" role="complementary" aria-label="Information de formation">
+      <div class="hero-badge-icon" aria-hidden="true">🎓</div>
+      <div class="hero-badge-label">Formation</div>
+      <div class="hero-badge-val">BTS SIO SISR</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-top:.35rem;">Lycée Joseph-Marie Carriat</div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-label">Qui suis-je ?</div>
+    <h2 class="section-title" id="about-title">À propos de moi</h2>
+    <div class="about-grid fade-in">
+      <div class="about-photo-placeholder" role="img" aria-label="Photo de profil - Yassine AKHOURFI">👤</div>
+      <div class="about-cards">
+        <article class="about-card">
+          <h3>Formation</h3>
+          <p>Je suis actuellement en deuxième année de BTS SIO, option SISR, après avoir obtenu un baccalauréat professionnel SN, option RISC.</p>
+        </article>
+        <article class="about-card">
+          <h3>Objectifs</h3>
+          <p>Mon projet professionnel est encore en cours de réflexion. Je souhaite me réorienter vers une voie qui correspond davantage à mes envies et à mes objectifs pour l'avenir.</p>
+        </article>
+        <article class="about-card">
+          <h3>Expérience</h3>
+          <p>J'ai effectué un stage de 6 semaines lors de ma première année, puis un stage de 7 semaines durant ma deuxième année. Lors de mon baccalauréat professionnel, j'ai réalisé plusieurs périodes de stage représentant un total de 22 semaines.</p>
+        </article>
+        <article class="about-card">
+          <h3>Mon parcours</h3>
+          <p>Au cours de ma formation, j'ai eu l'occasion de développer et de renforcer mes compétences en informatique, aussi bien sur le plan technique que pratique.</p>
+          <p>Aujourd'hui, je souhaite me réorienter vers une voie qui correspond davantage à mes envies.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAGES -->
+<section id="stages" aria-labelledby="stages-title">
+  <div class="container">
+    <div class="section-label">Expériences professionnelles</div>
+    <h2 class="section-title" id="stages-title">Stages</h2>
+    <p class="section-desc">Mes expériences professionnelles en entreprise</p>
+    <div class="stages-grid fade-in">
+
+      <article class="stage-card">
+        <div class="stage-year">1ère Année • Mai – Juin 2025</div>
+        <div class="stage-title">Stage de première année</div>
+        <div class="stage-company">Téréva – Bourg-en-Bresse</div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem;">Téréva est une entreprise spécialisée dans la distribution de matériels et d'équipements pour les professionnels du bâtiment, notamment dans les domaines du sanitaire, de la plomberie, du chauffage et de l'électricité.</p>
+        <div class="stage-missions">
+          <h4>Missions réalisées</h4>
+          <ul>
+            <li>Préparation de poste</li>
+            <li>Tri et mise à jour des numéros de téléphone</li>
+            <li>Modification de profils utilisateurs</li>
+          </ul>
+        </div>
+        <div class="stage-skills">
+          <span class="tag">Gestion et mise à jour de bases de données</span>
+          <span class="tag">Organisation et traitement de données</span>
+          <span class="tag">Préparation et configuration de postes</span>
+        </div>
+      </article>
+
+      <article class="stage-card">
+        <div class="stage-year">2ème Année • Janvier – Février 2026</div>
+        <div class="stage-title">Stage de deuxième année</div>
+        <div class="stage-company">Téréva – Bourg-en-Bresse</div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem;">Téréva est une entreprise spécialisée dans la distribution de matériels et d'équipements pour les professionnels du bâtiment, notamment dans les domaines du sanitaire, de la plomberie, du chauffage et de l'électricité.</p>
+        <div class="stage-missions">
+          <h4>Missions réalisées</h4>
+          <ul>
+            <li>Préparation de poste</li>
+          </ul>
+        </div>
+        <div class="stage-skills">
+          <span class="tag">Préparation et configuration de postes informatiques</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets" aria-labelledby="projects-title">
+  <div class="container">
+    <div class="section-label">Réalisations</div>
+    <h2 class="section-title" id="projects-title">Projets</h2>
+    <p class="section-desc">Réalisations académiques, professionnelles et personnelles</p>
+    <div class="projets-grid fade-in">
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🖥️</div>
+        <div class="projet-body">
+          <div class="projet-context">2ème année BTS</div>
+          <div class="projet-title">La Virtualisation</div>
+          <p class="projet-desc">Découverte et mise en œuvre des principes de virtualisation pour héberger plusieurs environnements sur une même infrastructure physique.</p>
+          <ul class="projet-results">
+            <li>Création et gestion d'environnements virtualisés</li>
+            <li>Optimisation des ressources matérielles</li>
+            <li>Simplification du déploiement des services</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">⚙️</div>
+        <div class="projet-body">
+          <div class="projet-context">2ème année BTS</div>
+          <div class="projet-title">Déploiement de postes – WDS / MDT / WSUS</div>
+          <p class="projet-desc">Mise en place d'une solution de déploiement automatisé de postes Windows avec gestion des images système et administration des mises à jour.</p>
+          <ul class="projet-results">
+            <li>Automatisation de l'installation des postes clients</li>
+            <li>Standardisation des déploiements système</li>
+            <li>Gestion centralisée des mises à jour Windows</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">📺</div>
+        <div class="projet-body">
+          <div class="projet-context">2ème année BTS</div>
+          <div class="projet-title">AD – GPO</div>
+          <p class="projet-desc">Administration d'un environnement Active Directory avec création et gestion des stratégies de groupe afin de centraliser la configuration et la sécurisation des postes.</p>
+          <ul class="projet-results">
+            <li>Déploiement d'un domaine Active Directory fonctionnel</li>
+            <li>Mise en place de stratégies de groupe</li>
+            <li>Renforcement de la sécurité Windows</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🌐</div>
+        <div class="projet-body">
+          <div class="projet-context">2ème année BTS</div>
+          <div class="projet-title">Atelier professionnelle</div>
+          <p class="projet-desc">Conception et déploiement d'une infrastructure complète pour l'entreprise Hyperlink incluant réseau, stockage et services applicatifs avec accès sécurisés.</p>
+          <ul class="projet-results">
+            <li>Configuration des VLANs, routage inter-VLAN et VPN</li>
+            <li>Déploiement des services Active Directory, DNS et DHCP</li>
+            <li>Stockage réseau sécurisé avec TrueNAS</li>
+            <li>Installation d'un environnement Odoo avec base de données</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences" aria-labelledby="skills-title">
+  <div class="container">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title" id="skills-title">Compétences</h2>
+    <p class="section-desc">Mes domaines d'expertise technique et outils maîtrisés</p>
+
+    <div class="skills-grid fade-in">
+      <div class="skill-category">
+        <h3>🖥️ Administration Système</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Windows Server</span>
+            <span class="skill-pct" aria-label="85 pour cent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Windows Server - 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Linux (Debian/Ubuntu)</span>
+            <span class="skill-pct" aria-label="80 pour cent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Linux Debian/Ubuntu - 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Active Directory</span>
+            <span class="skill-pct" aria-label="75 pour cent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Active Directory - 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">PowerShell / Bash</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="PowerShell/Bash - 70%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>🌐 Réseaux</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">TCP/IP</span>
+            <span class="skill-pct" aria-label="85 pour cent">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="TCP/IP - 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Cisco IOS</span>
+            <span class="skill-pct" aria-label="75 pour cent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Cisco IOS - 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">VLANs &amp; Routage</span>
+            <span class="skill-pct" aria-label="80 pour cent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="VLANs et Routage - 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">VPN &amp; Firewall</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="VPN et Firewall - 70%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>🔐 Cybersécurité</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Sécurité réseau</span>
+            <span class="skill-pct" aria-label="75 pour cent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Sécurité réseau - 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Pare-feu (pfSense)</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Pare-feu pfSense - 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Analyse de logs</span>
+            <span class="skill-pct" aria-label="65 pour cent">65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Analyse de logs - 65%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Hardening système</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Hardening système - 70%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>💻 Virtualisation</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">VMware ESXi</span>
+            <span class="skill-pct" aria-label="80 pour cent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="VMware ESXi - 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Hyper-V</span>
+            <span class="skill-pct" aria-label="75 pour cent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Hyper-V - 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Docker</span>
+            <span class="skill-pct" aria-label="65 pour cent">65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Docker - 65%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Proxmox</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Proxmox - 70%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>☁️ Cloud Computing</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Azure</span>
+            <span class="skill-pct" aria-label="60 pour cent">60%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Azure - 60%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">AWS (bases)</span>
+            <span class="skill-pct" aria-label="55 pour cent">55%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="55" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="AWS bases - 55%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Microsoft 365</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Microsoft 365 - 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Infrastructure as Code</span>
+            <span class="skill-pct" aria-label="50 pour cent">50%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Infrastructure as Code - 50%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>🗄️ Bases de données</h3>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">MySQL / MariaDB</span>
+            <span class="skill-pct" aria-label="70 pour cent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL/MariaDB - 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">PostgreSQL</span>
+            <span class="skill-pct" aria-label="65 pour cent">65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="PostgreSQL - 65%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">SQL Server</span>
+            <span class="skill-pct" aria-label="60 pour cent">60%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="SQL Server - 60%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Sauvegarde &amp; Restauration</span>
+            <span class="skill-pct" aria-label="75 pour cent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Sauvegarde et Restauration - 75%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools-box fade-in">
+      <h3>🔧 Outils &amp; Technologies</h3>
+      <div class="tools-list">
+        <span class="tool-tag" tabindex="0">Git</span>
+        <span class="tool-tag" tabindex="0">Ansible</span>
+        <span class="tool-tag" tabindex="0">Nagios</span>
+        <span class="tool-tag" tabindex="0">Wireshark</span>
+        <span class="tool-tag" tabindex="0">Packet Tracer</span>
+        <span class="tool-tag" tabindex="0">GNS3</span>
+        <span class="tool-tag" tabindex="0">Veeam</span>
+        <span class="tool-tag" tabindex="0">Zabbix</span>
+        <span class="tool-tag" tabindex="0">pfSense</span>
+        <span class="tool-tag" tabindex="0">Apache/Nginx</span>
+        <span class="tool-tag" tabindex="0">GLPI</span>
+        <span class="tool-tag" tabindex="0">OCS Inventory</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VEILLE -->
+<section id="veille" aria-labelledby="veille-title">
+  <div class="container">
+    <div class="section-label">Actualités tech</div>
+    <h2 class="section-title" id="veille-title">Veille Technologique</h2>
+    <p class="section-desc">Suivi des tendances et innovations en biotechnologie – Mars 2026</p>
+
+    <article class="veille-card fade-in">
+      <div class="veille-header">
+        <div class="veille-img-placeholder" role="img" aria-label="Icône biotechnologie">🧬</div>
+        <div>
+          <div class="veille-cat">Biotechnologie</div>
+          <div class="veille-title">C'est quoi, la Biotech ?</div>
+          <div class="veille-subtitle">Application de la science et la technologie au vivant pour produire des connaissances, des biens ou des services</div>
+          <div class="veille-techs">
+            <span class="tag">Santé</span>
+            <span class="tag">Thérapie génique</span>
+            <span class="tag">Anticorps</span>
+            <span class="tag">IA &amp; Pharma</span>
+            <span class="tag">M&amp;A</span>
+          </div>
+        </div>
+      </div>
+      <div class="veille-body">
+        <div class="veille-section">
+          <h4>Définition</h4>
+          <p style="font-size:.88rem;color:var(--muted);">La biotechnologie consiste à appliquer la science et la technologie au vivant — organismes, cellules, composants biologiques et procédés biologiques — pour produire des connaissances, des biens ou des services. En pratique, cela couvre surtout les médicaments biologiques, la thérapie génique, l'édition génétique, les outils de diagnostic, et une partie de la bio-industrie.</p>
+        </div>
+        <div class="veille-section">
+          <h4>Tendances 2026</h4>
+          <ul class="veille-points">
+            <li><strong>L'IA devient stratégique</strong> L'IA est désormais traitée comme un outil de création d'actifs thérapeutiques, pas seulement comme un outil d'analyse.</li>
+            <li><strong>Retour des acquisitions</strong> Les big pharma cherchent activement des biotechs pour alimenter leurs pipelines face aux expirations de brevets.</li>
+            <li><strong>Les essais cliniques restent le juge final</strong> La valeur du secteur repose toujours sur les résultats cliniques.</li>
+            <li><strong>Innovation radicale ET incrémentale</strong> Le secteur mélange ruptures (IA, thérapie génique) et optimisations de traitements existants.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="veille-impact">
+        <h4>Synthèse</h4>
+        <p>Sur les trois dernières semaines, les signaux forts sont : montée de l'IA dans la découverte de médicaments, retour des acquisitions, importance des données cliniques, et valorisation des actifs thérapeutiques différenciants.</p>
+      </div>
+    </article>
+
+    <div style="margin-bottom:1.5rem;">
+      <div class="section-label" style="margin-bottom:.4rem;">5 articles récents – Sources Reuters</div>
+    </div>
+
+    <div class="projets-grid fade-in">
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🤖</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>29 mars 2026</span><span>Partenariat IA</span></div>
+          <div class="projet-title">Eli Lilly &amp; Insilico Medicine</div>
+          <p class="projet-desc">Lilly étend son accord avec Insilico Medicine jusqu'à 2,75 milliards de dollars autour de la découverte de médicaments assistée par IA. La frontière entre biotech et IA appliquée à la pharma devient un des axes les plus chauds du secteur.</p>
+          <ul class="projet-results">
+            <li>IA comme levier concret de pipeline</li>
+            <li>Accélération de l'identification de cibles moléculaires</li>
+            <li>Valeur stratégique croissante des acteurs IA-pharma</li>
+          </ul>
+          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/insilico-medicine-secures-275-billion-drug-collaboration-deal-with-eli-lilly-2026-03-29/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">💊</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>27 mars 2026</span><span>Acquisition</span></div>
+          <div class="projet-title">Novartis rachète Excellergy</div>
+          <p class="projet-desc">Novartis a annoncé le rachat de la biotech américaine Excellergy pour jusqu'à 2 milliards de dollars. L'actif clé est Exl-111, un candidat contre l'allergie alimentaire, pour renforcer le portefeuille anti-allergique du groupe.</p>
+          <ul class="projet-results">
+            <li>Actifs biotech ciblés très valorisés</li>
+            <li>Compensation des pressions des biosimilaires</li>
+            <li>Renforcement d'une franchise existante</li>
+          </ul>
+          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/novartis-pay-up-2-billion-us-biotech-firm-excellergy-2026-03-27/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🫀</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>27 mars 2026</span><span>Essai clinique</span></div>
+          <div class="projet-title">AstraZeneca – Résultats COPD</div>
+          <p class="projet-desc">Le candidat tozorakimab d'AstraZeneca a réduit les exacerbations modérées à s  vères de BPCO dans deux essais de phase avancée. Un anticorps monoclonal ciblant IL-33 avec un fort potentiel commercial.</p>
+          <ul class="projet-results">
+            <li>Efficacité robuste sur grande indication inflammatoire</li>
+            <li>Impact direct possible sur la valorisation boursière</li>
+            <li>Signal fort pour les mouvements de M&amp;A</li>
+          </ul>
+          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/astrazeneca-drug-reduces-flare-ups-chronic-lung-disease-late-stage-trials-2026-03-27/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">💰</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>25 mars 2026</span><span>Acquisition</span></div>
+          <div class="projet-title">Merck rachète Terns Pharma</div>
+          <p class="projet-desc">Merck a annoncé le rachat de Terns Pharma pour 6,7 milliards de dollars pour renforcer son pipeline en oncologie avant l'expiration du brevet de Keytruda en 2028. L'actif principal : TERN-701 contre la leucémie myéloïde chronique.</p>
+          <ul class="projet-results">
+            <li>Patent cliff comme moteur structurel du M&amp;A</li>
+            <li>Actifs cliniques prometteurs très attractifs</li>
+            <li>Illustration de la stratégie big pharma en 2026</li>
+          </ul>
+          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/merck-braces-keytruda-patent-loss-67-billion-terns-bet-2026-03-25/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🧬</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>30 mars 2026</span><span>Approbation FDA</span></div>
+          <div class="projet-title">Biogen – Spinraza dose élevée</div>
+          <p class="projet-desc">La FDA a approuvé une version à dose plus élevée de Spinraza pour l'amyotrophie spinale. Innovation incrémentale mais révélatrice : la biotech avance aussi par optimisation de produits existants, pas seulement par ruptures radicales.</p>
+          <ul class="projet-results">
+            <li>Innovation incrémentale à fort impact médical</li>
+            <li>Optimisation d'un schéma posologique existant</li>
+            <li>Fort potentiel commercial sur une indication établie</li>
+          </ul>
+          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/biogen-gets-fda-approval-higher-dose-genetic-disorder-drug-2026-03-30/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--surface);" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="section-label">Travaillons ensemble</div>
+    <h2 class="section-title" id="contact-title">Contact</h2>
+    <p class="section-desc">N'hésitez pas à me contacter pour toute opportunité ou question</p>
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <div class="contact-item" role="region" aria-label="Informations de contact">
+          <div class="contact-icon" aria-hidden="true">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:yassine.akhourfi@example.com">yassine.akhourfi@example.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📱</div>
+          <div>
+            <div class="contact-label">Téléphone</div>
+            <div class="contact-value">
+              <a href="tel:+33768345590" aria-label="Appeler au +33 7 68 34 55 90">+33 7 68 34 55 90</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📍</div>
+          <div>
+            <div class="contact-label">Localisation</div>
+            <div class="contact-value">Bourg-en-Bresse, France</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" aria-label="Formulaire de contact">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Nom complet <span aria-label="requis">*</span></label>
+            <input id="fullname" type="text" name="fullname" placeholder="Votre nom" aria-required="true" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span aria-label="requis">*</span></label>
+            <input id="email" type="email" name="email" placeholder="votre@email.com" aria-required="true" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Sujet <span aria-label="requis">*</span></label>
+          <input id="subject" type="text" name="subject" placeholder="Objet de votre message" aria-required="true" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span aria-label="requis">*</span></label>
+          <textarea id="message" name="message" placeholder="Votre message..." aria-required="true" required></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" id="sendBtn" type="button" aria-label="Envoyer le message">Envoyer le message</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <p>&copy; 2026 Yassine AKHOURFI – Portfolio BTS SIO SISR</p>
+</footer>
+
+<script>
+  // Hamburger menu avec accessibilité
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  
+  hamburger.addEventListener('click', function() { 
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { 
+      navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // Gestion du clavier pour le menu
+  hamburger.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+
+  // Fade-in observer
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { 
+      if (e.isIntersecting) e.target.classList.add('visible'); 
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+  // Skill bar animation avec aria-valuenow
+  const barObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-fill').forEach(function(bar) {
+          const width = bar.getAttribute('data-width');
+          bar.style.width = width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-category').forEach(function(el) { barObserver.observe(el); });
+
+  // Contact button feedback avec accessibilité
+  document.getElementById('sendBtn').addEventListener('click', function() {
+    const originalText = 'Envoyer le message';
+    this.textContent = 'Message envoyé ✓';
+    this.style.background = 'var(--accent3)';
+    this.style.color = '#0a0f1e';
+    this.disabled = true;
+    
+    var btn = this;
+    setTimeout(function() {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, 3000);
+  });
+
+  // Navigation au clavier pour les outils
+  document.querySelectorAll('.tool-tag').forEach(function(tag) {
+    tag.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        // Ajouter une action si nécessaire
+      }
+    });
+  });
+</script>
 </body>
 </html>
