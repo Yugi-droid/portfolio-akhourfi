@@ -188,7 +188,6 @@
       width: 2rem; 
       height: 2px; 
       background: var(--accent); 
-      aria-hidden: "true";
     }
     .hero-name { 
       font-size: clamp(2.5rem, 7vw, 5rem); 
@@ -268,7 +267,6 @@
     .hero-badge-icon { 
       font-size: 2.5rem; 
       margin-bottom: .5rem; 
-      aria-hidden: "true";
     }
     .hero-badge-label { 
       font-family: var(--mono); 
@@ -308,7 +306,6 @@
       width:1.5rem; 
       height:2px; 
       background:var(--accent); 
-      aria-hidden: "true";
     }
     .section-title { 
       font-size: clamp(1.8rem, 4vw, 2.6rem); 
@@ -342,7 +339,6 @@
       align-items: center; 
       justify-content: center; 
       font-size: 5rem; 
-      aria-label: "Photo de profil - Yassine AKHOURFI";
     }
     .about-cards { 
       display: flex; 
@@ -403,7 +399,6 @@
       right: 0; 
       height: 3px; 
       background: linear-gradient(90deg, var(--accent), var(--accent2)); 
-      aria-hidden: "true";
     }
     .stage-year { 
       font-family: var(--mono); 
@@ -448,7 +443,6 @@
       content: '→'; 
       color: var(--accent); 
       flex-shrink: 0; 
-      aria-hidden: "true";
     }
     .stage-skills { 
       display: flex; 
@@ -497,7 +491,6 @@
       align-items: center; 
       justify-content: center; 
       font-size: 2.5rem; 
-      aria-hidden: "true";
     }
     .projet-body { 
       padding: 1.25rem; 
@@ -541,7 +534,6 @@
       content: '✓'; 
       color: var(--accent3); 
       flex-shrink: 0; 
-      aria-hidden: "true";
     }
 
     /* COMPETENCES */
@@ -662,7 +654,6 @@
       font-size: 2.5rem; 
       border-radius: 8px; 
       flex-shrink: 0; 
-      aria-hidden: "true";
     }
     .veille-cat { 
       font-family: var(--mono); 
@@ -783,7 +774,6 @@
     .contact-icon { 
       font-size: 1.4rem; 
       flex-shrink: 0; 
-      aria-hidden: "true";
     }
     .contact-label { 
       font-family: var(--mono); 
@@ -1376,129 +1366,104 @@
   <div class="container">
     <div class="section-label">Actualités tech</div>
     <h2 class="section-title" id="veille-title">Veille Technologique</h2>
-    <p class="section-desc">Suivi des tendances et innovations en biotechnologie – Mars 2026</p>
+    <p class="section-desc">Suivi des tendances en cybersécurité, administration système et infrastructures réseau</p>
 
     <article class="veille-card fade-in">
       <div class="veille-header">
-        <div class="veille-img-placeholder" role="img" aria-label="Icône biotechnologie">🧬</div>
+        <div class="veille-img-placeholder" role="img" aria-label="Icône cybersécurité">🛡️</div>
         <div>
-          <div class="veille-cat">Biotechnologie</div>
-          <div class="veille-title">C'est quoi, la Biotech ?</div>
-          <div class="veille-subtitle">Application de la science et la technologie au vivant pour produire des connaissances, des biens ou des services</div>
+          <div class="veille-cat">Cybersécurité &amp; Infrastructure</div>
+          <div class="veille-title">Pourquoi cette veille est importante en SISR</div>
+          <div class="veille-subtitle">Anticiper les vulnérabilités, suivre les évolutions des systèmes et comprendre les nouvelles pratiques d'administration sécurisée</div>
           <div class="veille-techs">
-            <span class="tag">Santé</span>
-            <span class="tag">Thérapie génique</span>
-            <span class="tag">Anticorps</span>
-            <span class="tag">IA &amp; Pharma</span>
-            <span class="tag">M&amp;A</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Réseaux</span>
+            <span class="tag">Virtualisation</span>
           </div>
         </div>
       </div>
+
       <div class="veille-body">
         <div class="veille-section">
-          <h4>Définition</h4>
-          <p style="font-size:.88rem;color:var(--muted);">La biotechnologie consiste à appliquer la science et la technologie au vivant — organismes, cellules, composants biologiques et procédés biologiques — pour produire des connaissances, des biens ou des services. En pratique, cela couvre surtout les médicaments biologiques, la thérapie génique, l'édition génétique, les outils de diagnostic, et une partie de la bio-industrie.</p>
+          <h4>Objectif</h4>
+          <p style="font-size:.88rem;color:var(--muted);">
+            Ma veille technologique porte sur les sujets directement liés au BTS SIO SISR :
+            la sécurité des systèmes, l'administration réseau, la gestion des accès, les sauvegardes,
+            la virtualisation et les bonnes pratiques de durcissement des environnements Windows et Linux.
+          </p>
         </div>
+
         <div class="veille-section">
-          <h4>Tendances 2026</h4>
+          <h4>Points suivis</h4>
           <ul class="veille-points">
-            <li><strong>L'IA devient stratégique</strong> L'IA est désormais traitée comme un outil de création d'actifs thérapeutiques, pas seulement comme un outil d'analyse.</li>
-            <li><strong>Retour des acquisitions</strong> Les big pharma cherchent activement des biotechs pour alimenter leurs pipelines face aux expirations de brevets.</li>
-            <li><strong>Les essais cliniques restent le juge final</strong> La valeur du secteur repose toujours sur les résultats cliniques.</li>
-            <li><strong>Innovation radicale ET incrémentale</strong> Le secteur mélange ruptures (IA, thérapie génique) et optimisations de traitements existants.</li>
+            <li><strong>Vulnérabilités critiques</strong> Surveillance des failles touchant Windows, Linux, Active Directory, VPN, pare-feu et solutions de virtualisation.</li>
+            <li><strong>Bonnes pratiques d'administration</strong> Gestion des comptes, des droits, des mises à jour, des journaux et des sauvegardes.</li>
+            <li><strong>Évolution des infrastructures</strong> Suivi des usages autour de la virtualisation, du cloud et de l'automatisation.</li>
+            <li><strong>Protection du réseau</strong> Segmentation, filtrage, supervision et sécurisation des accès distants.</li>
           </ul>
         </div>
       </div>
+
       <div class="veille-impact">
         <h4>Synthèse</h4>
-        <p>Sur les trois dernières semaines, les signaux forts sont : montée de l'IA dans la découverte de médicaments, retour des acquisitions, importance des données cliniques, et valorisation des actifs thérapeutiques différenciants.</p>
+        <p>
+          Cette veille me permet de relier les notions vues en formation à des cas concrets :
+          sécurisation d'un domaine Active Directory, administration de serveurs, déploiement de postes,
+          supervision d'infrastructure et réduction des risques sur un réseau d'entreprise.
+        </p>
       </div>
     </article>
-
-    <div style="margin-bottom:1.5rem;">
-      <div class="section-label" style="margin-bottom:.4rem;">5 articles récents – Sources Reuters</div>
-    </div>
 
     <div class="projets-grid fade-in">
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🤖</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🔐</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>29 mars 2026</span><span>Partenariat IA</span></div>
-          <div class="projet-title">Eli Lilly &amp; Insilico Medicine</div>
-          <p class="projet-desc">Lilly étend son accord avec Insilico Medicine jusqu'à 2,75 milliards de dollars autour de la découverte de médicaments assistée par IA. La frontière entre biotech et IA appliquée à la pharma devient un des axes les plus chauds du secteur.</p>
+          <div class="projet-context">Sujet de veille</div>
+          <div class="projet-title">Sécurisation d'Active Directory</div>
+          <p class="projet-desc">Étude des bonnes pratiques pour limiter les privilèges excessifs, protéger les comptes sensibles et renforcer les stratégies de groupe.</p>
           <ul class="projet-results">
-            <li>IA comme levier concret de pipeline</li>
-            <li>Accélération de l'identification de cibles moléculaires</li>
-            <li>Valeur stratégique croissante des acteurs IA-pharma</li>
+            <li>Gestion rigoureuse des droits</li>
+            <li>Renforcement des GPO</li>
+            <li>Réduction de la surface d'attaque</li>
           </ul>
-          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/insilico-medicine-secures-275-billion-drug-collaboration-deal-with-eli-lilly-2026-03-29/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">💊</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🖧</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>27 mars 2026</span><span>Acquisition</span></div>
-          <div class="projet-title">Novartis rachète Excellergy</div>
-          <p class="projet-desc">Novartis a annoncé le rachat de la biotech américaine Excellergy pour jusqu'à 2 milliards de dollars. L'actif clé est Exl-111, un candidat contre l'allergie alimentaire, pour renforcer le portefeuille anti-allergique du groupe.</p>
+          <div class="projet-context">Sujet de veille</div>
+          <div class="projet-title">Segmentation réseau et accès distants</div>
+          <p class="projet-desc">Analyse des VLAN, du routage inter-VLAN, des VPN et des règles de filtrage pour mieux isoler les services et sécuriser les connexions.</p>
           <ul class="projet-results">
-            <li>Actifs biotech ciblés très valorisés</li>
-            <li>Compensation des pressions des biosimilaires</li>
-            <li>Renforcement d'une franchise existante</li>
+            <li>Amélioration de l'isolation réseau</li>
+            <li>Contrôle plus fin des flux</li>
+            <li>Accès distant plus sécurisé</li>
           </ul>
-          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/novartis-pay-up-2-billion-us-biotech-firm-excellergy-2026-03-27/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🫀</div>
+        <div class="projet-img-placeholder" aria-hidden="true">💾</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>27 mars 2026</span><span>Essai clinique</span></div>
-          <div class="projet-title">AstraZeneca – Résultats COPD</div>
-          <p class="projet-desc">Le candidat tozorakimab d'AstraZeneca a réduit les exacerbations modérées à s  vères de BPCO dans deux essais de phase avancée. Un anticorps monoclonal ciblant IL-33 avec un fort potentiel commercial.</p>
+          <div class="projet-context">Sujet de veille</div>
+          <div class="projet-title">Sauvegarde, supervision et continuité</div>
+          <p class="projet-desc">Suivi des méthodes de sauvegarde, de restauration et de supervision pour maintenir la disponibilité des services et réagir rapidement aux incidents.</p>
           <ul class="projet-results">
-            <li>Efficacité robuste sur grande indication inflammatoire</li>
-            <li>Impact direct possible sur la valorisation boursière</li>
-            <li>Signal fort pour les mouvements de M&amp;A</li>
+            <li>Plan de reprise plus fiable</li>
+            <li>Détection plus rapide des anomalies</li>
+            <li>Meilleure continuité de service</li>
           </ul>
-          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/astrazeneca-drug-reduces-flare-ups-chronic-lung-disease-late-stage-trials-2026-03-27/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">💰</div>
-        <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>25 mars 2026</span><span>Acquisition</span></div>
-          <div class="projet-title">Merck rachète Terns Pharma</div>
-          <p class="projet-desc">Merck a annoncé le rachat de Terns Pharma pour 6,7 milliards de dollars pour renforcer son pipeline en oncologie avant l'expiration du brevet de Keytruda en 2028. L'actif principal : TERN-701 contre la leucémie myéloïde chronique.</p>
-          <ul class="projet-results">
-            <li>Patent cliff comme moteur structurel du M&amp;A</li>
-            <li>Actifs cliniques prometteurs très attractifs</li>
-            <li>Illustration de la stratégie big pharma en 2026</li>
-          </ul>
-          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/merck-braces-keytruda-patent-loss-67-billion-terns-bet-2026-03-25/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🧬</div>
-        <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>30 mars 2026</span><span>Approbation FDA</span></div>
-          <div class="projet-title">Biogen – Spinraza dose élevée</div>
-          <p class="projet-desc">La FDA a approuvé une version à dose plus élevée de Spinraza pour l'amyotrophie spinale. Innovation incrémentale mais révélatrice : la biotech avance aussi par optimisation de produits existants, pas seulement par ruptures radicales.</p>
-          <ul class="projet-results">
-            <li>Innovation incrémentale à fort impact médical</li>
-            <li>Optimisation d'un schéma posologique existant</li>
-            <li>Fort potentiel commercial sur une indication établie</li>
-          </ul>
-          <a class="article-link" href="https://www.reuters.com/business/healthcare-pharmaceuticals/biogen-gets-fda-approval-higher-dose-genetic-disorder-drug-2026-03-30/" target="_blank" rel="noopener" aria-label="Lire l'article sur Reuters - nouvelle fenêtre">↗ Lire sur Reuters</a>
         </div>
       </article>
 
     </div>
   </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--surface);" aria-labelledby="contact-title">
