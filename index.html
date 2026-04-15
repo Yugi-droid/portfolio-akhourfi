@@ -188,6 +188,7 @@
       width: 2rem; 
       height: 2px; 
       background: var(--accent); 
+      aria-hidden: "true";
     }
     .hero-name { 
       font-size: clamp(2.5rem, 7vw, 5rem); 
@@ -267,6 +268,7 @@
     .hero-badge-icon { 
       font-size: 2.5rem; 
       margin-bottom: .5rem; 
+      aria-hidden: "true";
     }
     .hero-badge-label { 
       font-family: var(--mono); 
@@ -306,6 +308,7 @@
       width:1.5rem; 
       height:2px; 
       background:var(--accent); 
+      aria-hidden: "true";
     }
     .section-title { 
       font-size: clamp(1.8rem, 4vw, 2.6rem); 
@@ -339,6 +342,7 @@
       align-items: center; 
       justify-content: center; 
       font-size: 5rem; 
+      aria-label: "Photo de profil - Yassine AKHOURFI";
     }
     .about-cards { 
       display: flex; 
@@ -399,6 +403,7 @@
       right: 0; 
       height: 3px; 
       background: linear-gradient(90deg, var(--accent), var(--accent2)); 
+      aria-hidden: "true";
     }
     .stage-year { 
       font-family: var(--mono); 
@@ -443,6 +448,7 @@
       content: '→'; 
       color: var(--accent); 
       flex-shrink: 0; 
+      aria-hidden: "true";
     }
     .stage-skills { 
       display: flex; 
@@ -491,6 +497,7 @@
       align-items: center; 
       justify-content: center; 
       font-size: 2.5rem; 
+      aria-hidden: "true";
     }
     .projet-body { 
       padding: 1.25rem; 
@@ -534,6 +541,7 @@
       content: '✓'; 
       color: var(--accent3); 
       flex-shrink: 0; 
+      aria-hidden: "true";
     }
 
     /* COMPETENCES */
@@ -654,6 +662,7 @@
       font-size: 2.5rem; 
       border-radius: 8px; 
       flex-shrink: 0; 
+      aria-hidden: "true";
     }
     .veille-cat { 
       font-family: var(--mono); 
@@ -774,6 +783,7 @@
     .contact-icon { 
       font-size: 1.4rem; 
       flex-shrink: 0; 
+      aria-hidden: "true";
     }
     .contact-label { 
       font-family: var(--mono); 
@@ -1343,14 +1353,8 @@
     <div class="tools-box fade-in">
       <h3>🔧 Outils &amp; Technologies</h3>
       <div class="tools-list">
-        <span class="tool-tag" tabindex="0">Git</span>
-        <span class="tool-tag" tabindex="0">Ansible</span>
-        <span class="tool-tag" tabindex="0">Nagios</span>
         <span class="tool-tag" tabindex="0">Wireshark</span>
         <span class="tool-tag" tabindex="0">Packet Tracer</span>
-        <span class="tool-tag" tabindex="0">GNS3</span>
-        <span class="tool-tag" tabindex="0">Veeam</span>
-        <span class="tool-tag" tabindex="0">Zabbix</span>
         <span class="tool-tag" tabindex="0">pfSense</span>
         <span class="tool-tag" tabindex="0">Apache/Nginx</span>
         <span class="tool-tag" tabindex="0">GLPI</span>
@@ -1366,104 +1370,129 @@
   <div class="container">
     <div class="section-label">Actualités tech</div>
     <h2 class="section-title" id="veille-title">Veille Technologique</h2>
-    <p class="section-desc">Suivi des tendances en cybersécurité, administration système et infrastructures réseau</p>
+    <p class="section-desc">Suivi des tendances et innovations en biotechnologie – Mars 2026</p>
 
     <article class="veille-card fade-in">
       <div class="veille-header">
-        <div class="veille-img-placeholder" role="img" aria-label="Icône cybersécurité">🛡️</div>
+        <div class="veille-img-placeholder" role="img" aria-label="Icône biotechnologie">🧬</div>
         <div>
-          <div class="veille-cat">Cybersécurité &amp; Infrastructure</div>
-          <div class="veille-title">Pourquoi cette veille est importante en SISR</div>
-          <div class="veille-subtitle">Anticiper les vulnérabilités, suivre les évolutions des systèmes et comprendre les nouvelles pratiques d'administration sécurisée</div>
+          <div class="veille-cat">Biotechnologie</div>
+          <div class="veille-title">C'est quoi, la Biotech ?</div>
+          <div class="veille-subtitle">Application de la science et la technologie au vivant pour produire des connaissances, des biens ou des services</div>
           <div class="veille-techs">
-            <span class="tag">Windows Server</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Active Directory</span>
-            <span class="tag">Réseaux</span>
-            <span class="tag">Virtualisation</span>
+            <span class="tag">Santé</span>
+            <span class="tag">Thérapie génique</span>
+            <span class="tag">Anticorps</span>
+            <span class="tag">IA &amp; Pharma</span>
+            <span class="tag">M&amp;A</span>
           </div>
         </div>
       </div>
-
       <div class="veille-body">
         <div class="veille-section">
-          <h4>Objectif</h4>
-          <p style="font-size:.88rem;color:var(--muted);">
-            Ma veille technologique porte sur les sujets directement liés au BTS SIO SISR :
-            la sécurité des systèmes, l'administration réseau, la gestion des accès, les sauvegardes,
-            la virtualisation et les bonnes pratiques de durcissement des environnements Windows et Linux.
-          </p>
+          <h4>Définition</h4>
+          <p style="font-size:.88rem;color:var(--muted);">La biotechnologie consiste à appliquer la science et la technologie au vivant — organismes, cellules, composants biologiques et procédés biologiques — pour produire des connaissances, des biens ou des services. En pratique, cela couvre surtout les médicaments biologiques, la thérapie génique, l'édition génétique, les outils de diagnostic, et une partie de la bio-industrie.</p>
         </div>
-
         <div class="veille-section">
-          <h4>Points suivis</h4>
+          <h4>Tendances 2026</h4>
           <ul class="veille-points">
-            <li><strong>Vulnérabilités critiques</strong> Surveillance des failles touchant Windows, Linux, Active Directory, VPN, pare-feu et solutions de virtualisation.</li>
-            <li><strong>Bonnes pratiques d'administration</strong> Gestion des comptes, des droits, des mises à jour, des journaux et des sauvegardes.</li>
-            <li><strong>Évolution des infrastructures</strong> Suivi des usages autour de la virtualisation, du cloud et de l'automatisation.</li>
-            <li><strong>Protection du réseau</strong> Segmentation, filtrage, supervision et sécurisation des accès distants.</li>
+            <li><strong>L'IA devient stratégique</strong> L'IA est désormais traitée comme un outil de création d'actifs thérapeutiques, pas seulement comme un outil d'analyse.</li>
+            <li><strong>Retour des acquisitions</strong> Les big pharma cherchent activement des biotechs pour alimenter leurs pipelines face aux expirations de brevets.</li>
+            <li><strong>Les essais cliniques restent le juge final</strong> La valeur du secteur repose toujours sur les résultats cliniques.</li>
+            <li><strong>Innovation radicale ET incrémentale</strong> Le secteur mélange ruptures (IA, thérapie génique) et optimisations de traitements existants.</li>
           </ul>
         </div>
       </div>
-
       <div class="veille-impact">
         <h4>Synthèse</h4>
-        <p>
-          Cette veille me permet de relier les notions vues en formation à des cas concrets :
-          sécurisation d'un domaine Active Directory, administration de serveurs, déploiement de postes,
-          supervision d'infrastructure et réduction des risques sur un réseau d'entreprise.
-        </p>
+        <p>Sur les trois dernières semaines, les signaux forts sont : montée de l'IA dans la découverte de médicaments, retour des acquisitions, importance des données cliniques, et valorisation des actifs thérapeutiques différenciants.</p>
       </div>
     </article>
+
+    <div style="margin-bottom:1.5rem;">
+      <div class="section-label" style="margin-bottom:.4rem;">5 articles récents – Sources françaises</div>
+    </div>
 
     <div class="projets-grid fade-in">
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🔐</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🧫</div>
         <div class="projet-body">
-          <div class="projet-context">Sujet de veille</div>
-          <div class="projet-title">Sécurisation d'Active Directory</div>
-          <p class="projet-desc">Étude des bonnes pratiques pour limiter les privilèges excessifs, protéger les comptes sensibles et renforcer les stratégies de groupe.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>9 avril 2026</span><span>Bioproduction</span></div>
+          <div class="projet-title">Allogenica – CAR-T allogéniques</div>
+          <p class="projet-desc">La biotech française Allogenica travaille à démocratiser les thérapies CAR-T allogéniques : des traitements anticancer produits à partir de cellules de donneurs, plus rapides à fabriquer et potentiellement plus accessibles que les CAR-T autologues.</p>
           <ul class="projet-results">
-            <li>Gestion rigoureuse des droits</li>
-            <li>Renforcement des GPO</li>
-            <li>Réduction de la surface d'attaque</li>
+            <li>Rupture dans la fabrication de thérapies cellulaires</li>
+            <li>Standardisation et scalabilité de la production</li>
+            <li>Accessibilité accrue pour les patients</li>
           </ul>
+          <a class="article-link" href="https://www.usinenouvelle.com/sante-pharma/bioproduction-comment-les-biotechs-francaises-travaillent-a-democratiser-les-therapies-car-t-allogeniques.GEDV24BT3VDWXHLR6JSRJYZRRM.html" target="_blank" rel="noopener" aria-label="Lire l'article sur L'Usine Nouvelle - nouvelle fenêtre">↗ Lire sur L'Usine Nouvelle</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🖧</div>
+        <div class="projet-img-placeholder" aria-hidden="true">💶</div>
         <div class="projet-body">
-          <div class="projet-context">Sujet de veille</div>
-          <div class="projet-title">Segmentation réseau et accès distants</div>
-          <p class="projet-desc">Analyse des VLAN, du routage inter-VLAN, des VPN et des règles de filtrage pour mieux isoler les services et sécuriser les connexions.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>9 avril 2026</span><span>Financement</span></div>
+          <div class="projet-title">Jeito clôture 1 milliard d'euros</div>
+          <p class="projet-desc">Le fonds d'investissement français Jeito boucle une levée d'1 milliard d'euros, présentée comme un signal positif pour l'ensemble des biotechs européennes. Le financement conditionne la capacité du secteur à lancer de nouveaux programmes cliniques.</p>
           <ul class="projet-results">
-            <li>Amélioration de l'isolation réseau</li>
-            <li>Contrôle plus fin des flux</li>
-            <li>Accès distant plus sécurisé</li>
+            <li>Retour des capitaux sur les biotechs européennes</li>
+            <li>Signal positif pour l'innovation à long terme</li>
+            <li>Renforcement de l'écosystème biotech français</li>
           </ul>
+          <a class="article-link" href="https://www.usinenouvelle.com/sante-pharma/le-fonds-dinvestissement-francais-jeito-cloture-une-levee-de-fonds-d1-milliard-deuros-signal-positif-pour-les-biotechs-europeennes.WJEL5WJORBDCZND2S6ZMIVLQGQ.html" target="_blank" rel="noopener" aria-label="Lire l'article sur L'Usine Nouvelle - nouvelle fenêtre">↗ Lire sur L'Usine Nouvelle</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">💾</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🤖</div>
         <div class="projet-body">
-          <div class="projet-context">Sujet de veille</div>
-          <div class="projet-title">Sauvegarde, supervision et continuité</div>
-          <p class="projet-desc">Suivi des méthodes de sauvegarde, de restauration et de supervision pour maintenir la disponibilité des services et réagir rapidement aux incidents.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>29 mars 2026</span><span>Partenariat IA</span></div>
+          <div class="projet-title">Insilico Medicine &amp; Eli Lilly – 2,75 Mds $</div>
+          <p class="projet-desc">Insilico Medicine, spécialisée dans la découverte de médicaments par intelligence artificielle, conclut un accord avec Eli Lilly pouvant atteindre 2,75 milliards de dollars. L'IA s'impose comme outil de création d'actifs thérapeutiques à part entière.</p>
           <ul class="projet-results">
-            <li>Plan de reprise plus fiable</li>
-            <li>Détection plus rapide des anomalies</li>
-            <li>Meilleure continuité de service</li>
+            <li>IA comme levier stratégique de pipeline</li>
+            <li>Identification plus rapide de molécules candidates</li>
+            <li>Valeur croissante des acteurs IA-pharma</li>
           </ul>
+          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/insilico-medicine-conclut-une-collaboration-avec-eli-lilly-pour-un-montant-de-2-75-milliards-de-dollars-275abeea884503bd88f39661285ea530" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">😴</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>31 mars 2026</span><span>Acquisition</span></div>
+          <div class="projet-title">Eli Lilly vise Centessa pour 7,8 Mds $</div>
+          <p class="projet-desc">Eli Lilly cherche à racheter Centessa, une biotech active sur les traitements des troubles du sommeil, pour 7,8 milliards de dollars. Un exemple classique de big pharma qui acquiert des programmes prometteurs plutôt que de les développer en interne.</p>
+          <ul class="projet-results">
+            <li>Stratégie M&amp;A structurelle des grands groupes</li>
+            <li>Valorisation élevée des actifs cliniques différenciants</li>
+            <li>Illustration du modèle d'acquisition de pipeline</li>
+          </ul>
+          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/sur-le-marche-des-troubles-du-sommeil-eli-lilly-vise-centessa-pour-7-8-milliards-daeba5f27c04b5b4440efa3cd91d9974" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🧬</div>
+        <div class="projet-body">
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>30 mars 2026</span><span>Approbation FDA</span></div>
+          <div class="projet-title">Biogen – Spinraza dose élevée approuvée</div>
+          <p class="projet-desc">La FDA approuve une dose plus élevée de Spinraza, le traitement de Biogen contre l'amyotrophie spinale. Un rappel que la biotech avance aussi par optimisation de traitements existants, pas uniquement par innovations de rupture.</p>
+          <ul class="projet-results">
+            <li>Innovation incrémentale à fort impact médical</li>
+            <li>Optimisation du schéma posologique existant</li>
+            <li>Fort potentiel commercial sur une indication établie</li>
+          </ul>
+          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/biogen-obtient-l-approbation-de-la-fda-pour-une-dose-plus-elevee-de-son-medicament-contre-les-troubles-genetiques-24d2b8054cdbaa7d87d2bbb15fd9023c" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
         </div>
       </article>
 
     </div>
   </div>
 </section>
-
 
 <!-- CONTACT -->
 <section id="contact" style="background:var(--surface);" aria-labelledby="contact-title">
@@ -1478,7 +1507,7 @@
           <div>
             <div class="contact-label">Email</div>
             <div class="contact-value">
-              <a href="mailto:yassine.akhourfi@example.com">yassine.akhourfi@example.com</a>
+              <a href="mailto:yassine.akhourfi.pro@gmail.com">yassine.akhourfi.pro@gmail.com</a>
             </div>
           </div>
         </div>
