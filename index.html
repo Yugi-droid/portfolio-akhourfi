@@ -522,7 +522,6 @@
       font-size: .85rem; 
       color: var(--muted); 
       margin-bottom: 1rem; 
-      flex: 1; 
     }
     .projet-results { 
       list-style: none; 
@@ -936,7 +935,6 @@
       <div class="hero-label">Bonjour, je suis</div>
       <h1 class="hero-name" id="hero-title">Yassine AKHOURFI</h1>
       <p class="hero-sub">Étudiant en BTS SIO – SISR</p>
-      <p class="hero-desc">Passionné par les infrastructures réseaux et la cybersécurité, je développe mes compétences en administration système et sécurité informatique.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">Me contacter</a>
         <a href="#projets" class="btn btn-outline">Voir mes projets</a>
@@ -977,7 +975,6 @@
         <article class="about-card">
           <h3>Mon parcours</h3>
           <p>Au cours de ma formation, j'ai eu l'occasion de développer et de renforcer mes compétences en informatique, aussi bien sur le plan technique que pratique.</p>
-          <p>Aujourd'hui, je souhaite me réorienter vers une voie qui correspond davantage à mes envies.</p>
         </article>
       </div>
     </div>
@@ -1044,13 +1041,16 @@
         <div class="projet-img-placeholder" aria-hidden="true">🖥️</div>
         <div class="projet-body">
           <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">La Virtualisation</div>
+          <div class="projet-title">TP 2 — Virtualisation</div>
           <p class="projet-desc">Découverte et mise en œuvre des principes de virtualisation pour héberger plusieurs environnements sur une même infrastructure physique.</p>
           <ul class="projet-results">
             <li>Création et gestion d'environnements virtualisés</li>
             <li>Optimisation des ressources matérielles</li>
             <li>Simplification du déploiement des services</li>
           </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">VMware</span>
+          </div>
         </div>
       </article>
 
@@ -1065,6 +1065,13 @@
             <li>Standardisation des déploiements système</li>
             <li>Gestion centralisée des mises à jour Windows</li>
           </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">Windows Server</span>
+            <span class="tag">WDS</span>
+            <span class="tag">MDT</span>
+            <span class="tag">WSUS</span>
+            <span class="tag">PXE</span>
+          </div>
         </div>
       </article>
 
@@ -1072,13 +1079,19 @@
         <div class="projet-img-placeholder" aria-hidden="true">📺</div>
         <div class="projet-body">
           <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">AD – GPO</div>
+          <div class="projet-title">TP 1 — Active Directory / GPO</div>
           <p class="projet-desc">Administration d'un environnement Active Directory avec création et gestion des stratégies de groupe afin de centraliser la configuration et la sécurisation des postes.</p>
           <ul class="projet-results">
             <li>Déploiement d'un domaine Active Directory fonctionnel</li>
             <li>Mise en place de stratégies de groupe</li>
             <li>Renforcement de la sécurité Windows</li>
           </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">Windows Server</span>
+            <span class="tag">AD DS</span>
+            <span class="tag">GPO</span>
+            <span class="tag">DNS</span>
+          </div>
         </div>
       </article>
 
@@ -1086,14 +1099,24 @@
         <div class="projet-img-placeholder" aria-hidden="true">🌐</div>
         <div class="projet-body">
           <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">Atelier professionnelle</div>
-          <p class="projet-desc">Conception et déploiement d'une infrastructure complète pour l'entreprise Hyperlink incluant réseau, stockage et services applicatifs avec accès sécurisés.</p>
+          <div class="projet-title">Atelier Professionnel – Infrastructure d'entreprise</div>
+          <p class="projet-desc">Mise en place d'une infrastructure d'entreprise complète en 4 phases : segmentation réseau par VLANs, sécurisation via pfSense et OpenVPN, déploiement d'un stockage centralisé TrueNAS intégré à l'Active Directory, et installation d'un ERP Odoo avec load balancing Nginx et base de données PostgreSQL.</p>
           <ul class="projet-results">
-            <li>Configuration des VLANs, routage inter-VLAN et VPN</li>
-            <li>Déploiement des services Active Directory, DNS et DHCP</li>
-            <li>Stockage réseau sécurisé avec TrueNAS</li>
-            <li>Installation d'un environnement Odoo avec base de données</li>
+            <li>Phase 1 – Architecture réseau : segmentation par VLANs</li>
+            <li>Phase 2 – Sécurisation : pare-feu pfSense et tunnel OpenVPN</li>
+            <li>Phase 3 – Stockage : TrueNAS connecté à l'Active Directory</li>
+            <li>Phase 4 – ERP Odoo avec load balancing Nginx et PostgreSQL</li>
           </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">VLAN</span>
+            <span class="tag">pfSense</span>
+            <span class="tag">OpenVPN</span>
+            <span class="tag">TrueNAS</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">Odoo</span>
+            <span class="tag">Nginx</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
         </div>
       </article>
 
@@ -1111,241 +1134,45 @@
     <div class="skills-grid fade-in">
       <div class="skill-category">
         <h3>🖥️ Administration Système</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Windows Server</span>
-            <span class="skill-pct" aria-label="85 pour cent">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Windows Server - 85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Linux (Debian/Ubuntu)</span>
-            <span class="skill-pct" aria-label="80 pour cent">80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Linux Debian/Ubuntu - 80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Active Directory</span>
-            <span class="skill-pct" aria-label="75 pour cent">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Active Directory - 75%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">PowerShell / Bash</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="PowerShell/Bash - 70%"></div>
-          </div>
+        <div class="stage-skills" style="margin-top:.5rem;">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Linux Debian</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">PowerShell / Bash</span>
         </div>
       </div>
 
       <div class="skill-category">
         <h3>🌐 Réseaux</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">TCP/IP</span>
-            <span class="skill-pct" aria-label="85 pour cent">85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="TCP/IP - 85%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Cisco IOS</span>
-            <span class="skill-pct" aria-label="75 pour cent">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Cisco IOS - 75%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">VLANs &amp; Routage</span>
-            <span class="skill-pct" aria-label="80 pour cent">80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="VLANs et Routage - 80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">VPN &amp; Firewall</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="VPN et Firewall - 70%"></div>
-          </div>
+        <div class="stage-skills" style="margin-top:.5rem;">
+          <span class="tag">TCP/IP</span>
+          <span class="tag">VLANs &amp; Routage</span>
+          <span class="tag">VPN &amp; Firewall</span>
         </div>
       </div>
 
       <div class="skill-category">
         <h3>🔐 Cybersécurité</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Sécurité réseau</span>
-            <span class="skill-pct" aria-label="75 pour cent">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Sécurité réseau - 75%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Pare-feu (pfSense)</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Pare-feu pfSense - 70%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Analyse de logs</span>
-            <span class="skill-pct" aria-label="65 pour cent">65%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Analyse de logs - 65%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Hardening système</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Hardening système - 70%"></div>
-          </div>
+        <div class="stage-skills" style="margin-top:.5rem;">
+          <span class="tag">Pare-feu (pfSense)</span>
+          <span class="tag">Analyse de logs</span>
         </div>
       </div>
 
       <div class="skill-category">
         <h3>💻 Virtualisation</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">VMware ESXi</span>
-            <span class="skill-pct" aria-label="80 pour cent">80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="VMware ESXi - 80%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Hyper-V</span>
-            <span class="skill-pct" aria-label="75 pour cent">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Hyper-V - 75%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Docker</span>
-            <span class="skill-pct" aria-label="65 pour cent">65%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Docker - 65%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Proxmox</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Proxmox - 70%"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>☁️ Cloud Computing</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Azure</span>
-            <span class="skill-pct" aria-label="60 pour cent">60%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Azure - 60%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">AWS (bases)</span>
-            <span class="skill-pct" aria-label="55 pour cent">55%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="55" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="AWS bases - 55%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Microsoft 365</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Microsoft 365 - 70%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Infrastructure as Code</span>
-            <span class="skill-pct" aria-label="50 pour cent">50%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Infrastructure as Code - 50%"></div>
-          </div>
+        <div class="stage-skills" style="margin-top:.5rem;">
+          <span class="tag">VMware</span>
+          <span class="tag">Hyper-V</span>
+          <span class="tag">Proxmox</span>
         </div>
       </div>
 
       <div class="skill-category">
         <h3>🗄️ Bases de données</h3>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">MySQL / MariaDB</span>
-            <span class="skill-pct" aria-label="70 pour cent">70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="70" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="MySQL/MariaDB - 70%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">PostgreSQL</span>
-            <span class="skill-pct" aria-label="65 pour cent">65%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="PostgreSQL - 65%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">SQL Server</span>
-            <span class="skill-pct" aria-label="60 pour cent">60%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="SQL Server - 60%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-header">
-            <span class="skill-name">Sauvegarde &amp; Restauration</span>
-            <span class="skill-pct" aria-label="75 pour cent">75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-width="75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Sauvegarde et Restauration - 75%"></div>
-          </div>
+        <div class="stage-skills" style="margin-top:.5rem;">
+          <span class="tag">MySQL / MariaDB</span>
+          <span class="tag">Sauvegarde &amp; Restauration</span>
         </div>
       </div>
     </div>
