@@ -544,6 +544,38 @@
       flex-shrink: 0; 
       aria-hidden: "true";
     }
+    .mission-item {
+      cursor: pointer;
+      border-radius: 6px;
+      padding: .3rem .4rem;
+      transition: background .2s;
+      display: block !important;
+      gap: 0 !important;
+    }
+    .mission-item::before { content: '' !important; }
+    .mission-item:hover { background: rgba(0,212,255,.06); }
+    .mission-title {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .85rem;
+      color: var(--text);
+      font-weight: 500;
+      user-select: none;
+    }
+    .mission-detail {
+      display: none;
+      margin-top: .5rem;
+      padding: .75rem 1rem;
+      background: rgba(0,212,255,.05);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .mission-item.open .mission-detail { display: block; }
+    .mission-item.open .mission-title { color: var(--accent); }
     .stage-skills { 
       display: flex; 
       flex-wrap: wrap; 
@@ -1105,15 +1137,11 @@
         </article>
         <article class="about-card">
           <h3>Objectifs</h3>
-          <p>Mon projet professionnel est encore en cours de réflexion. Je souhaite me réorienter vers une voie qui correspond davantage à mes envies et à mes objectifs pour l'avenir.</p>
+          <p>Je suis encore en train de définir mon projet professionnel. J'aimerais me tourner vers une voie qui correspond davantage à mes envies et à mes objectifs futurs, tout en gardant l'informatique comme option envisageable en second choix.</p>
         </article>
         <article class="about-card">
           <h3>Expérience</h3>
           <p>J'ai effectué un stage de 6 semaines lors de ma première année, puis un stage de 7 semaines durant ma deuxième année. Lors de mon baccalauréat professionnel, j'ai réalisé plusieurs périodes de stage représentant un total de 22 semaines.</p>
-        </article>
-        <article class="about-card">
-          <h3>Mon parcours</h3>
-          <p>Au cours de ma formation, j'ai eu l'occasion de développer et de renforcer mes compétences en informatique, aussi bien sur le plan technique que pratique.</p>
         </article>
       </div>
     </div>
@@ -1134,11 +1162,28 @@
         <div class="stage-company">Téréva – Bourg-en-Bresse</div>
         <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem;">Téréva est une entreprise spécialisée dans la distribution de matériels et d'équipements pour les professionnels du bâtiment, notamment dans les domaines du sanitaire, de la plomberie, du chauffage et de l'électricité.</p>
         <div class="stage-missions">
-          <h4>Missions réalisées</h4>
+          <h4>Mission réalisée</h4>
           <ul>
-            <li>Préparation de poste</li>
-            <li>Tri et mise à jour des numéros de téléphone</li>
-            <li>Modification de profils utilisateurs</li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Préparation de poste</span>
+              <div class="mission-detail">J'ai commencé par installer Windows 10 via le réseau en démarrage PXE, puis j'ai attribué le nom du poste avant son redémarrage. J'ai ensuite installé les logiciels nécessaires selon le cahier des charges, à l'aide du centre logiciel où ils étaient disponibles. J'ai effectué les mises à jour de Windows 10 et vérifié que la version du poste était à jour, notamment pour les équipements HP. Après cela, j'ai ajouté l'utilisateur au groupe utilisateur. Une fois connecté à son compte, j'ai configuré l'imprimante. J'ai ensuite exécuté un script permettant l'installation de Windows 11. Une fois Windows 11 installé, j'ai exécuté un second script pour déplacer le dossier utilisateur vers le second disque. Enfin, j'ai terminé par les mises à jour de Windows 11.</div>
+            </li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Tri et mise à jour des numéros de téléphone</span>
+              <div class="mission-detail">Mise à jour de 1 500 numéros de téléphone : vérification de l'exactitude des noms, de l'activité des lignes, et contrôle des doublons pour éviter que certaines personnes aient plusieurs numéros différents. Un fichier Excel regroupait les informations à vérifier et à corriger.</div>
+            </li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Modification de profils utilisateurs</span>
+              <div class="mission-detail">Utilisation de MyInfra pour la mise à jour des informations utilisateurs : modification des numéros de téléphone, création de comptes, attribution des licences Windows, saisie du responsable hiérarchique et du lieu de travail.</div>
+            </li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Gestion de ticket sur GLPI</span>
+              <div class="mission-detail">Planification du renouvellement des postes informatiques durant la période estivale, avec envoi de tickets aux utilisateurs à partir d'un message prédéfini, afin d'organiser le remplacement des postes devenus obsolètes.</div>
+            </li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Imprimantes</span>
+              <div class="mission-detail">Je vérifiais que les imprimantes étaient bien configurées en DHCP et je notais celles qui ne l'étaient pas.</div>
+            </li>
           </ul>
         </div>
         <div class="stage-skills">
@@ -1154,9 +1199,12 @@
         <div class="stage-company">Téréva – Bourg-en-Bresse</div>
         <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem;">Téréva est une entreprise spécialisée dans la distribution de matériels et d'équipements pour les professionnels du bâtiment, notamment dans les domaines du sanitaire, de la plomberie, du chauffage et de l'électricité.</p>
         <div class="stage-missions">
-          <h4>Missions réalisées</h4>
+          <h4>Mission réalisée</h4>
           <ul>
-            <li>Préparation de poste</li>
+            <li class="mission-item" onclick="toggleMission(this)">
+              <span class="mission-title">▶ Préparation de poste</span>
+              <div class="mission-detail">J'ai commencé par installer Windows 10 via le réseau en démarrage PXE, puis j'ai attribué le nom du poste avant son redémarrage. J'ai ensuite installé les logiciels nécessaires selon le cahier des charges, à l'aide du centre logiciel où ils étaient disponibles. J'ai effectué les mises à jour de Windows 10 et vérifié que la version du poste était à jour, notamment pour les équipements HP. Après cela, j'ai ajouté l'utilisateur au groupe utilisateur. Une fois connecté à son compte, j'ai configuré l'imprimante. J'ai ensuite exécuté un script permettant l'installation de Windows 11. Une fois Windows 11 installé, j'ai exécuté un second script pour déplacer le dossier utilisateur vers le second disque. Enfin, j'ai terminé par les mises à jour de Windows 11.</div>
+            </li>
           </ul>
         </div>
         <div class="stage-skills">
@@ -1177,68 +1225,30 @@
     <div class="projets-grid fade-in">
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🖥️</div>
-        <div class="projet-body">
-          <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">TP 2 — Virtualisation</div>
-          <p class="projet-desc">Découverte et mise en œuvre des principes de virtualisation pour héberger plusieurs environnements sur une même infrastructure physique.</p>
-          <ul class="projet-results">
-            <li>Création et gestion d'environnements virtualisés</li>
-            <li>Optimisation des ressources matérielles</li>
-            <li>Simplification du déploiement des services</li>
-          </ul>
-          <div class="stage-skills" style="margin-top:1rem;">
-            <span class="tag">VMware</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">⚙️</div>
-        <div class="projet-body">
-          <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">Déploiement de postes – WDS / MDT / WSUS</div>
-          <p class="projet-desc">Mise en place d'une solution de déploiement automatisé de postes Windows avec gestion des images système et administration des mises à jour.</p>
-          <ul class="projet-results">
-            <li>Automatisation de l'installation des postes clients</li>
-            <li>Standardisation des déploiements système</li>
-            <li>Gestion centralisée des mises à jour Windows</li>
-          </ul>
-          <div class="stage-skills" style="margin-top:1rem;">
-            <span class="tag">Windows Server</span>
-            <span class="tag">WDS</span>
-            <span class="tag">MDT</span>
-            <span class="tag">WSUS</span>
-            <span class="tag">PXE</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">📺</div>
-        <div class="projet-body">
-          <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">TP 1 — Active Directory / GPO</div>
-          <p class="projet-desc">Administration d'un environnement Active Directory avec création et gestion des stratégies de groupe afin de centraliser la configuration et la sécurisation des postes.</p>
-          <ul class="projet-results">
-            <li>Déploiement d'un domaine Active Directory fonctionnel</li>
-            <li>Mise en place de stratégies de groupe</li>
-            <li>Renforcement de la sécurité Windows</li>
-          </ul>
-          <div class="stage-skills" style="margin-top:1rem;">
-            <span class="tag">Windows Server</span>
-            <span class="tag">AD DS</span>
-            <span class="tag">GPO</span>
-            <span class="tag">DNS</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="projet-card">
         <div class="projet-img-placeholder" aria-hidden="true">🌐</div>
         <div class="projet-body">
-          <div class="projet-context">2ème année BTS</div>
-          <div class="projet-title">Atelier Professionnel – Infrastructure d'entreprise</div>
+          <div class="projet-context">Réalisation en cours de formation</div>
+          <div class="projet-title">TP Haute disponibilité</div>
+          <p class="projet-desc">Mise en place d'une architecture hautement disponible afin d'assurer la continuité de service en cas de défaillance d'un composant de l'infrastructure.</p>
+          <ul class="projet-results">
+            <li>Configuration d'un cluster haute disponibilité</li>
+            <li>Basculement automatique en cas de panne</li>
+            <li>Maintien de la continuité de service</li>
+          </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">Proxmox</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Clustering</span>
+          </div>
+          <a class="article-link" href="TP_Haute_Disponibilite.pdf" download style="margin-top:1rem;" aria-label="Télécharger le document TP Haute disponibilité">⬇ Télécharger le document</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">🏗️</div>
+        <div class="projet-body">
+          <div class="projet-context">Réalisation en cours de formation</div>
+          <div class="projet-title">Projet AP – Atelier Professionnel</div>
           <p class="projet-desc">Mise en place d'une infrastructure d'entreprise complète en 4 phases : segmentation réseau par VLANs, sécurisation via pfSense et OpenVPN, déploiement d'un stockage centralisé TrueNAS intégré à l'Active Directory, et installation d'un ERP Odoo avec load balancing Nginx et base de données PostgreSQL.</p>
           <ul class="projet-results">
             <li>Phase 1 – Architecture réseau : segmentation par VLANs</li>
@@ -1256,29 +1266,75 @@
             <span class="tag">Nginx</span>
             <span class="tag">PostgreSQL</span>
           </div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:1rem;">
+            <a class="article-link" href="Mission_1.docx" download aria-label="Télécharger Mission 1">⬇ Télécharger Mission 1</a>
+            <a class="article-link" href="Mission_2.docx" download aria-label="Télécharger Mission 2">⬇ Télécharger Mission 2</a>
+          </div>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">📡</div>
+        <div class="projet-img-placeholder" aria-hidden="true">📺</div>
         <div class="projet-body">
-          <div class="projet-context">Terminale</div>
-          <div class="projet-title">Supervision d'infrastructure avec PRTG</div>
-          <p class="projet-desc">Mise en place d'une solution de supervision au sein d'une infrastructure virtualisée sous Hyper-V comprenant un serveur Active Directory, un serveur DHCP et deux postes clients afin de surveiller la disponibilité et l'état des équipements.</p>
+          <div class="projet-context">Réalisation en cours de formation</div>
+          <div class="projet-title">TP AD GPO – Administration système</div>
+          <p class="projet-desc">Administration d'un environnement Active Directory avec création et gestion des stratégies de groupe afin de centraliser la configuration et la sécurisation des postes.</p>
           <ul class="projet-results">
-            <li>Supervision des serveurs et postes clients</li>
-            <li>Surveillance de la disponibilité et des ressources système</li>
-            <li>Centralisation du suivi de l'infrastructure réseau</li>
+            <li>Déploiement d'un domaine Active Directory fonctionnel</li>
+            <li>Mise en place de stratégies de groupe</li>
+            <li>Renforcement de la sécurité Windows</li>
           </ul>
           <div class="stage-skills" style="margin-top:1rem;">
-            <span class="tag">Hyper-V</span>
-            <span class="tag">PRTG</span>
             <span class="tag">Windows Server</span>
             <span class="tag">AD DS</span>
-            <span class="tag">DHCP</span>
+            <span class="tag">GPO</span>
+            <span class="tag">DNS</span>
           </div>
         </div>
       </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">📋</div>
+        <div class="projet-body">
+          <div class="projet-context">Réalisation en cours de formation</div>
+          <div class="projet-title">TP Syslog</div>
+          <p class="projet-desc">Mise en place d'un serveur de journalisation centralisé pour collecter et analyser les logs des équipements réseau et des serveurs de l'infrastructure.</p>
+          <ul class="projet-results">
+            <li>Configuration d'un serveur Syslog centralisé</li>
+            <li>Collecte des journaux des équipements réseau</li>
+            <li>Analyse et surveillance des événements système</li>
+          </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">Syslog</span>
+            <span class="tag">Linux Debian</span>
+            <span class="tag">Analyse de logs</span>
+          </div>
+          <a class="article-link" href="TP_Syslog.pdf" download style="margin-top:1rem;" aria-label="Télécharger le document TP Syslog">⬇ Télécharger le document</a>
+        </div>
+      </article>
+
+      <article class="projet-card">
+        <div class="projet-img-placeholder" aria-hidden="true">⚙️</div>
+        <div class="projet-body">
+          <div class="projet-context">Réalisation en cours de formation</div>
+          <div class="projet-title">TP WDS MDT – Déploiement de postes</div>
+          <p class="projet-desc">Mise en place d'une solution de déploiement automatisé de postes Windows avec gestion des images système et administration des mises à jour.</p>
+          <ul class="projet-results">
+            <li>Automatisation de l'installation des postes clients</li>
+            <li>Standardisation des déploiements système</li>
+            <li>Gestion centralisée des mises à jour Windows</li>
+          </ul>
+          <div class="stage-skills" style="margin-top:1rem;">
+            <span class="tag">Windows Server</span>
+            <span class="tag">WDS</span>
+            <span class="tag">MDT</span>
+            <span class="tag">WSUS</span>
+            <span class="tag">PXE</span>
+          </div>
+        </div>
+      </article>
+
+
 
     </div>
   </div>
@@ -1296,7 +1352,6 @@
           <span class="tag">Windows Server</span>
           <span class="tag">Linux Debian</span>
           <span class="tag">Active Directory</span>
-          <span class="tag">PowerShell / Bash</span>
         </div>
       </div>
 
@@ -1305,14 +1360,12 @@
         <div class="stage-skills" style="margin-top:.5rem;">
           <span class="tag">TCP/IP</span>
           <span class="tag">VLANs &amp; Routage</span>
-          <span class="tag">VPN &amp; Firewall</span>
         </div>
       </div>
 
       <div class="skill-category">
         <h3>🔐 Cybersécurité</h3>
         <div class="stage-skills" style="margin-top:.5rem;">
-          <span class="tag">Pare-feu (pfSense)</span>
           <span class="tag">Analyse de logs</span>
         </div>
       </div>
@@ -1355,123 +1408,97 @@
   <div class="container">
     <div class="section-label">Actualités tech</div>
     <h2 class="section-title" id="veille-title">Veille Technologique</h2>
-    <p class="section-desc">Suivi des tendances et innovations en biotechnologie – Mars 2026</p>
+    <p class="section-desc">Suivi des tendances et innovations en infrastructure IT – Avril 2026</p>
 
     <article class="veille-card fade-in">
       <div class="veille-header">
-        <div class="veille-img-placeholder" role="img" aria-label="Icône biotechnologie">🧬</div>
+        <div class="veille-img-placeholder" role="img" aria-label="Icône AIOps">🤖</div>
         <div>
-          <div class="veille-cat">Biotechnologie</div>
-          <div class="veille-title">C'est quoi, la Biotech ?</div>
-          <div class="veille-subtitle">Application de la science et la technologie au vivant pour produire des connaissances, des biens ou des services</div>
+          <div class="veille-cat">Infrastructure IT · Intelligence Artificielle</div>
+          <div class="veille-title">AIOps — L'IA au service des infrastructures</div>
+          <div class="veille-subtitle">Artificial Intelligence for IT Operations : automatiser, prédire et sécuriser les systèmes informatiques grâce au machine learning</div>
           <div class="veille-techs">
-            <span class="tag">Santé</span>
-            <span class="tag">Thérapie génique</span>
-            <span class="tag">Anticorps</span>
-            <span class="tag">IA &amp; Pharma</span>
-            <span class="tag">M&amp;A</span>
+            <span class="tag">AIOps</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Supervision</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">Cybersécurité</span>
+            <span class="tag">DevOps</span>
           </div>
         </div>
       </div>
       <div class="veille-body">
         <div class="veille-section">
           <h4>Définition</h4>
-          <p style="font-size:.88rem;color:var(--muted);">La biotechnologie consiste à appliquer la science et la technologie au vivant — organismes, cellules, composants biologiques et procédés biologiques — pour produire des connaissances, des biens ou des services. En pratique, cela couvre surtout les médicaments biologiques, la thérapie génique, l'édition génétique, les outils de diagnostic, et une partie de la bio-industrie.</p>
+          <p style="font-size:.88rem;color:var(--muted);">L'AIOps (Artificial Intelligence for IT Operations) désigne l'utilisation de l'IA et du machine learning pour automatiser la gestion des infrastructures informatiques. Inventé par Gartner en 2016, ce concept permet aux équipes IT de détecter les anomalies, corréler les événements et prédire les pannes — à une échelle impossible à traiter manuellement.</p>
         </div>
         <div class="veille-section">
           <h4>Tendances 2026</h4>
           <ul class="veille-points">
-            <li><strong>L'IA devient stratégique</strong> L'IA est désormais traitée comme un outil de création d'actifs thérapeutiques, pas seulement comme un outil d'analyse.</li>
-            <li><strong>Retour des acquisitions</strong> Les big pharma cherchent activement des biotechs pour alimenter leurs pipelines face aux expirations de brevets.</li>
-            <li><strong>Les essais cliniques restent le juge final</strong> La valeur du secteur repose toujours sur les résultats cliniques.</li>
-            <li><strong>Innovation radicale ET incrémentale</strong> Le secteur mélange ruptures (IA, thérapie génique) et optimisations de traitements existants.</li>
+            <li><strong>Du réactif vers l'autonome</strong> Les systèmes passent de la correction de pannes à leur anticipation, voire leur résolution automatique sans intervention humaine.</li>
+            <li><strong>Fusion AIOps + Cybersécurité</strong> L'IA surveille désormais aussi les vecteurs d'attaque potentiels, pas seulement les anomalies de performance.</li>
+            <li><strong>Budgets en forte hausse</strong> Les investissements ont presque doublé en un an : de 14,7 M$ en 2024 à 27 M$ en 2025.</li>
+            <li><strong>Maturité encore limitée</strong> Le frein principal n'est plus la technologie, mais la maturité des fondations IT des entreprises.</li>
           </ul>
         </div>
       </div>
       <div class="veille-impact">
         <h4>Synthèse</h4>
-        <p>Sur les trois dernières semaines, les signaux forts sont : montée de l'IA dans la découverte de médicaments, retour des acquisitions, importance des données cliniques, et valorisation des actifs thérapeutiques différenciants.</p>
+        <p>En 2026, l'AIOps s'impose comme une évolution majeure de la supervision IT : les outils passent d'une logique réactive à proactive, intègrent la cybersécurité, et les budgets explosent malgré une industrialisation encore incomplète dans beaucoup d'entreprises.</p>
       </div>
     </article>
 
     <div style="margin-bottom:1.5rem;">
-      <div class="section-label" style="margin-bottom:.4rem;">5 articles récents – Sources françaises</div>
+      <div class="section-label" style="margin-bottom:.4rem;">3 articles analysés – Sources françaises</div>
     </div>
 
     <div class="projets-grid fade-in">
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🧫</div>
+        <div class="projet-img-placeholder" aria-hidden="true">📉</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>9 avril 2026</span><span>Bioproduction</span></div>
-          <div class="projet-title">Allogenica – CAR-T allogéniques</div>
-          <p class="projet-desc">La biotech française Allogenica travaille à démocratiser les thérapies CAR-T allogéniques : des traitements anticancer produits à partir de cellules de donneurs, plus rapides à fabriquer et potentiellement plus accessibles que les CAR-T autologues.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>Février 2026</span><span>Analyse</span></div>
+          <div class="projet-title">AIOps : l'écart entre investissements et maturité</div>
+          <p class="projet-desc">Basé sur un rapport Riverbed interrogeant 1 200 décideurs IT dans 7 pays, cet article met en lumière un paradoxe : les entreprises investissent massivement dans l'AIOps, mais peinent à industrialiser les solutions.</p>
           <ul class="projet-results">
-            <li>Rupture dans la fabrication de thérapies cellulaires</li>
-            <li>Standardisation et scalabilité de la production</li>
-            <li>Accessibilité accrue pour les patients</li>
+            <li>Budgets IA quasi doublés en un an (14,7 M$ → 27 M$)</li>
+            <li>91 % des orgs jugent le partage de données IA fondamental</li>
+            <li>OpenTelemetry s'impose comme standard stratégique</li>
+            <li>Frein principal : maturité des fondations IT, pas les modèles</li>
           </ul>
-          <a class="article-link" href="https://www.usinenouvelle.com/sante-pharma/bioproduction-comment-les-biotechs-francaises-travaillent-a-democratiser-les-therapies-car-t-allogeniques.GEDV24BT3VDWXHLR6JSRJYZRRM.html" target="_blank" rel="noopener" aria-label="Lire l'article sur L'Usine Nouvelle - nouvelle fenêtre">↗ Lire sur L'Usine Nouvelle</a>
+          <a class="article-link" href="https://itsocial.fr/cloud-infrastructure-it/cloud-infrastructure-it-articles/aiops-lecart-se-creuse-entre-investissements-ia-et-maturite-operationnelle/" target="_blank" rel="noopener" aria-label="Lire l'article sur IT Social - nouvelle fenêtre">↗ Lire sur IT Social</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">💶</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🛠️</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>9 avril 2026</span><span>Financement</span></div>
-          <div class="projet-title">Jeito clôture 1 milliard d'euros</div>
-          <p class="projet-desc">Le fonds d'investissement français Jeito boucle une levée d'1 milliard d'euros, présentée comme un signal positif pour l'ensemble des biotechs européennes. Le financement conditionne la capacité du secteur à lancer de nouveaux programmes cliniques.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>Mars 2026</span><span>Comparatif outils</span></div>
+          <div class="projet-title">Comparatif des outils AIOps en 2025</div>
+          <p class="projet-desc">Article comparatif complet présentant les principaux outils AIOps du marché — Dynatrace, Datadog, Splunk ITSI, Moogsoft, ServiceNow — avec leurs fonctionnalités, tarifs et cas d'usage selon les secteurs.</p>
           <ul class="projet-results">
-            <li>Retour des capitaux sur les biotechs européennes</li>
-            <li>Signal positif pour l'innovation à long terme</li>
-            <li>Renforcement de l'écosystème biotech français</li>
+            <li>AIOps déployé dans tous les secteurs : banque, santé, e-commerce</li>
+            <li>Dynatrace = référence premium pour environnements cloud/microservices</li>
+            <li>Datadog = populaire DevOps, +600 intégrations natives</li>
+            <li>Pas d'outil universel : le choix dépend du contexte IT</li>
           </ul>
-          <a class="article-link" href="https://www.usinenouvelle.com/sante-pharma/le-fonds-dinvestissement-francais-jeito-cloture-une-levee-de-fonds-d1-milliard-deuros-signal-positif-pour-les-biotechs-europeennes.WJEL5WJORBDCZND2S6ZMIVLQGQ.html" target="_blank" rel="noopener" aria-label="Lire l'article sur L'Usine Nouvelle - nouvelle fenêtre">↗ Lire sur L'Usine Nouvelle</a>
+          <a class="article-link" href="https://www.stemapartners.com/blog/comparatif-des-outils-aiops-en-2025/" target="_blank" rel="noopener" aria-label="Lire l'article sur Stema Partners - nouvelle fenêtre">↗ Lire sur Stema Partners</a>
         </div>
       </article>
 
       <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🤖</div>
+        <div class="projet-img-placeholder" aria-hidden="true">🔮</div>
         <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>29 mars 2026</span><span>Partenariat IA</span></div>
-          <div class="projet-title">Insilico Medicine &amp; Eli Lilly – 2,75 Mds $</div>
-          <p class="projet-desc">Insilico Medicine, spécialisée dans la découverte de médicaments par intelligence artificielle, conclut un accord avec Eli Lilly pouvant atteindre 2,75 milliards de dollars. L'IA s'impose comme outil de création d'actifs thérapeutiques à part entière.</p>
+          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>Janvier 2026</span><span>Tendances</span></div>
+          <div class="projet-title">AIOps 2026 — Vers des systèmes autonomes</div>
+          <p class="projet-desc">Article orienté futur qui décrit l'évolution de l'AIOps vers des opérations proactives et autonomes, et sa fusion progressive avec la cybersécurité pour une gestion IT entièrement intelligente.</p>
           <ul class="projet-results">
-            <li>IA comme levier stratégique de pipeline</li>
-            <li>Identification plus rapide de molécules candidates</li>
-            <li>Valeur croissante des acteurs IA-pharma</li>
+            <li>Passage d'une logique réactive à proactive, voire autonome</li>
+            <li>L'IA apprend les comportements système pour prédire les pannes</li>
+            <li>Fusion AIOps + cybersécurité : surveillance des vecteurs d'attaque</li>
+            <li>Distinction AIOps (opérations IT) vs MLOps (modèles d'IA)</li>
           </ul>
-          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/insilico-medicine-conclut-une-collaboration-avec-eli-lilly-pour-un-montant-de-2-75-milliards-de-dollars-275abeea884503bd88f39661285ea530" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">😴</div>
-        <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>31 mars 2026</span><span>Acquisition</span></div>
-          <div class="projet-title">Eli Lilly vise Centessa pour 7,8 Mds $</div>
-          <p class="projet-desc">Eli Lilly cherche à racheter Centessa, une biotech active sur les traitements des troubles du sommeil, pour 7,8 milliards de dollars. Un exemple classique de big pharma qui acquiert des programmes prometteurs plutôt que de les développer en interne.</p>
-          <ul class="projet-results">
-            <li>Stratégie M&amp;A structurelle des grands groupes</li>
-            <li>Valorisation élevée des actifs cliniques différenciants</li>
-            <li>Illustration du modèle d'acquisition de pipeline</li>
-          </ul>
-          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/sur-le-marche-des-troubles-du-sommeil-eli-lilly-vise-centessa-pour-7-8-milliards-daeba5f27c04b5b4440efa3cd91d9974" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-img-placeholder" aria-hidden="true">🧬</div>
-        <div class="projet-body">
-          <div class="projet-context" style="display:flex;justify-content:space-between;color:var(--accent)"><span>30 mars 2026</span><span>Approbation FDA</span></div>
-          <div class="projet-title">Biogen – Spinraza dose élevée approuvée</div>
-          <p class="projet-desc">La FDA approuve une dose plus élevée de Spinraza, le traitement de Biogen contre l'amyotrophie spinale. Un rappel que la biotech avance aussi par optimisation de traitements existants, pas uniquement par innovations de rupture.</p>
-          <ul class="projet-results">
-            <li>Innovation incrémentale à fort impact médical</li>
-            <li>Optimisation du schéma posologique existant</li>
-            <li>Fort potentiel commercial sur une indication établie</li>
-          </ul>
-          <a class="article-link" href="https://www.boursorama.com/bourse/actualites/biogen-obtient-l-approbation-de-la-fda-pour-une-dose-plus-elevee-de-son-medicament-contre-les-troubles-genetiques-24d2b8054cdbaa7d87d2bbb15fd9023c" target="_blank" rel="noopener" aria-label="Lire l'article sur Boursorama - nouvelle fenêtre">↗ Lire sur Boursorama</a>
+          <a class="article-link" href="https://www.buinsoft.com/fr/blog/aiops-2026/" target="_blank" rel="noopener" aria-label="Lire l'article sur Buinsoft - nouvelle fenêtre">↗ Lire sur Buinsoft</a>
         </div>
       </article>
 
@@ -1556,6 +1583,14 @@
 </footer>
 
 <script>
+  // Toggle mission details
+  function toggleMission(el) {
+    el.classList.toggle('open');
+    const arrow = el.querySelector('.mission-title');
+    const isOpen = el.classList.contains('open');
+    arrow.textContent = arrow.textContent.replace(isOpen ? '▶' : '▼', isOpen ? '▼' : '▶');
+  }
+
   // Hamburger menu avec accessibilité
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
