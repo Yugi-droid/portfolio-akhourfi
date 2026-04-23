@@ -1220,14 +1220,12 @@
           <div class="projet-title">TP Haute disponibilité</div>
           <p class="projet-desc">Mise en place d'une architecture hautement disponible afin d'assurer la continuité de service en cas de défaillance d'un composant de l'infrastructure.</p>
           <ul class="projet-results">
-            <li>Configuration d'un cluster haute disponibilité</li>
             <li>Basculement automatique en cas de panne</li>
             <li>Maintien de la continuité de service</li>
           </ul>
           <div class="stage-skills" style="margin-top:1rem;">
             <span class="tag">Proxmox</span>
             <span class="tag">Windows Server</span>
-            <span class="tag">Clustering</span>
           </div>
           <a class="article-link" href="TP_Haute_Disponibilite.pdf" download style="margin-top:1rem;" aria-label="Télécharger le document TP Haute disponibilité">⬇ Télécharger le document</a>
         </div>
@@ -1306,7 +1304,7 @@
         <div class="projet-img-placeholder" aria-hidden="true">⚙️</div>
         <div class="projet-body">
           <div class="projet-context">Réalisation en cours de formation</div>
-          <div class="projet-title">TP WDS MDT – Déploiement de postes</div>
+          <div class="projet-title">TP WDS MDT WSUS – Déploiement de postes</div>
           <p class="projet-desc">Mise en place d'une solution de déploiement automatisé de postes Windows avec gestion des images système et administration des mises à jour.</p>
           <ul class="projet-results">
             <li>Automatisation de l'installation des postes clients</li>
@@ -1625,15 +1623,30 @@
   }, { threshold: 0.3 });
   document.querySelectorAll('.skill-category').forEach(function(el) { barObserver.observe(el); });
 
-  // Contact button feedback avec accessibilité
+  // Contact form - envoi par mailto
   document.getElementById('sendBtn').addEventListener('click', function() {
+    const fullname = document.getElementById('fullname').value.trim();
+    const emailVal = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!fullname || !emailVal || !subject || !message) {
+      alert('Merci de remplir tous les champs.');
+      return;
+    }
+
+    const body = encodeURIComponent(
+      'Nom : ' + fullname + '\nEmail : ' + emailVal + '\n\n' + message
+    );
+    const subjectEncoded = encodeURIComponent(subject);
+    window.location.href = 'mailto:yassine.akhourfi.pro@gmail.com?subject=' + subjectEncoded + '&body=' + body;
+
+    const btn = this;
     const originalText = 'Envoyer le message';
-    this.textContent = 'Message envoyé ✓';
-    this.style.background = 'var(--accent3)';
-    this.style.color = '#0a0f1e';
-    this.disabled = true;
-    
-    var btn = this;
+    btn.textContent = 'Message envoyé ✓';
+    btn.style.background = 'var(--accent3)';
+    btn.style.color = '#0a0f1e';
+    btn.disabled = true;
     setTimeout(function() {
       btn.textContent = originalText;
       btn.style.background = '';
